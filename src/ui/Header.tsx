@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { SiFacebook, SiGithub, SiLinkedin } from "react-icons/si";
 
 function Header() {
   const [activeLink, setActiveLink] = useState<string>();
@@ -50,6 +51,23 @@ function Header() {
               href="#contact"
             >
               Contact
+            </a>
+          </li>
+        </ul>
+        <ul className="flex justify-end gap-4">
+          <li>
+            <a href="https://www.facebook.com/odayterk" target="_blank">
+              <SiFacebook className="text-xl" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/odaytarek/" target="_blank">
+              <SiLinkedin className="text-xl" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/AKira0169" target="_blank">
+              <SiGithub className="text-xl" />
             </a>
           </li>
         </ul>

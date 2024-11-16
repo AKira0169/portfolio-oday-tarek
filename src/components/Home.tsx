@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-
 import Slider from "./Slider";
-function Home() {
+import TypingAnimation from "./TypingAnimation";
+
+const Home = () => {
   return (
     <div
       className="backgrounddd flex flex-col items-center justify-center"
@@ -22,23 +23,11 @@ function Home() {
           alt="myImage"
           className="h-[105px] w-[105px] rounded-full"
         />
-        <div className="flex flex-col items-center">
-          <div className="w-[350px] text-center">
-            <h1>
-              <span className="text-3xl font-bold">
-                I'm a Full Stack Developer
-              </span>
-            </h1>
-            <p className="text-stone-500">
-              Over a 3 years of experience in building exceptional websites and
-              digital products.
-            </p>
-          </div>
-        </div>
+        <TypingAnimation />
       </motion.section>
       <Slider />
     </div>
   );
-}
+};
 
 export default Home;
