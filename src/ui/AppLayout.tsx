@@ -8,10 +8,10 @@ function AppLayout() {
   return (
     <div className="grid min-h-screen grid-rows-[auto,1fr] gap-32">
       <Header />
-      <main>
+      <main className="flex flex-col items-center justify-center gap-56">
         <Home />
-        <Projects />
         <About />
+        <Projects />
         <Contact />
       </main>
     </div>
