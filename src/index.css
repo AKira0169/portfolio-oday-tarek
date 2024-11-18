@@ -27,7 +27,7 @@ body {
   height: 250px;
   top: 0;
   z-index: -1; /* Put the background behind all content */
-  background: url("./src/assets/WhatsApp Image 20ss24-07-26 at 21.21.30_03354213.jpg")
+  background: url("/WhatsApp Image 20ss24-07-26 at 21.21.30_03354213.jpg")
     no-repeat center center / cover; /* Add your image here */
   filter: blur(40px); /* Adjust the blur effect */
   opacity: 0.5; /* Make it semi-transparent for a subtle look */

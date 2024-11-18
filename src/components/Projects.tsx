@@ -50,18 +50,18 @@ function Projects() {
           <div className="photos hidden h-1/2 w-1/2 flex-col items-center px-10 md:flex">
             <img
               className="w-full rounded-3xl"
-              src="./src/assets/Screenshot 2024-11-17 132029.png"
+              src="./Screenshot 2024-11-17 132029.png"
               alt="dashboard"
             />
             <div className="mt-4 flex justify-center gap-4">
               <img
                 className="w-1/2 rounded-3xl"
-                src="./src/assets/Screenshot 2024-11-17 132045.png"
+                src="./Screenshot 2024-11-17 132045.png"
                 alt="home"
               />
               <img
                 className="w-1/2 rounded-3xl"
-                src="./src/assets/Screenshot 2024-11-17 132127.png"
+                src="./Screenshot 2024-11-17 132127.png"
                 alt="profile"
               />
             </div>
@@ -94,7 +94,7 @@ function Projects() {
           <div className="photos hidden h-1/2 w-1/2 flex-col items-center px-10 md:flex">
             <img
               className="w-full rounded-3xl"
-              src="./src/assets/Online Learning Platform with course management, secure authentication, and payment integration (1).png"
+              src="./Online Learning Platform with course management, secure authentication, and payment integration (1).png"
               alt="dashboard"
             />
           </div>
@@ -124,7 +124,7 @@ function Projects() {
           <div className="photos hidden h-1/2 w-1/2 flex-col items-center px-10 md:flex">
             <img
               className="h-[400px] w-full rounded-3xl"
-              src="./src/assets/Screenshot 2024-11-17 230759.png"
+              src="./Screenshot 2024-11-17 230759.png"
               alt="dashboard"
             />
           </div>
@@ -157,7 +157,7 @@ function Projects() {
           <div className="photos hidden h-1/2 w-1/2 flex-col items-center px-10 md:flex">
             <img
               className="h-[400px] w-full rounded-3xl"
-              src="./src/assets/VqTxhJXVio3kjREdQWycvgH8bE8.png"
+              src="./VqTxhJXVio3kjREdQWycvgH8bE8.png"
               alt="dashboard"
             />
           </div>

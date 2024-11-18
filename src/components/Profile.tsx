@@ -14,7 +14,7 @@ function Profile() {
       viewport={{ amount: 0.5, once: true }} // Adjust trigger point
     >
       <img
-        src="./src/assets/WhatsApp Image 20ss24-07-26 at 21.21.30_03354213.jpg"
+        src="./WhatsApp Image 20ss24-07-26 at 21.21.30_03354213.jpg"
         alt="myImage"
         className="h-[105px] w-[105px] rounded-full"
       />
