@@ -1,6 +1,5 @@
 import Profile from "./Profile";
 import Skills from "./Skills";
-import Slider from "./Slider";
 
 const Home = () => {
   return (
@@ -9,7 +8,6 @@ const Home = () => {
       id="home"
     >
       <Profile />
-      <Slider />
       <Skills />
     </section>
   );
