@@ -33,6 +33,7 @@ function Skills() {
             initial={{ opacity: 0, y: -100, scale: 0.5 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
+            viewport={{ once: true, amount: 0.3 }}
             className="flex flex-col items-center gap-2"
           >
             <h2 className="text-3xl font-semibold">Frontend</h2>
@@ -65,6 +66,7 @@ function Skills() {
             initial={{ opacity: 0, y: 100, scale: 0.5 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
+            viewport={{ once: true, amount: 0.3 }}
             className="flex flex-col items-center gap-2"
           >
             <h2 className="text-3xl font-semibold">Backend</h2>
