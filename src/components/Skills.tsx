@@ -30,8 +30,8 @@ function Skills() {
         </motion.h1>
         <div className="mt-10 flex h-screen max-h-[244px] w-full justify-center gap-28">
           <motion.div
-            initial={{ opacity: 0, y: -100, scale: 0.5, position: "absolute" }}
-            whileInView={{ opacity: 1, y: 0, scale: 1, position: "relative" }}
+            initial={{ opacity: 0, y: -100, scale: 0.5 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col items-center gap-2"
           >
@@ -62,8 +62,8 @@ function Skills() {
             </ul>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 100, scale: 0.5, position: "absolute" }}
-            whileInView={{ opacity: 1, y: 0, scale: 1, position: "relative" }}
+            initial={{ opacity: 0, y: 100, scale: 0.5 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col items-center gap-2"
           >
