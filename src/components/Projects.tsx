@@ -23,7 +23,7 @@ function Projects() {
   return (
     <div
       ref={sectionRef}
-      className="relative flex h-[1600px] w-full max-w-[1000px] flex-col items-center bg-white md:h-[2000px]"
+      className="relative flex h-[1700px] w-full max-w-[1000px] flex-col items-center bg-white md:h-[2100px]"
       id="projects"
     >
       <motion.div
@@ -71,7 +71,7 @@ function Projects() {
 
       <motion.div
         style={{ scale: scale2, top: top2 }}
-        className="sticky flex h-[400px] w-full items-center rounded-[25px] bg-[#f3d3b5] md:h-[500px]"
+        className="sticky flex h-[500px] w-full items-center rounded-[25px] bg-[#f3d3b5] md:h-[500px]"
       >
         <div className="flex justify-between">
           <div className="content flex flex-col gap-4 px-10 md:w-1/2">
@@ -132,7 +132,7 @@ function Projects() {
       </motion.div>
       <motion.div
         style={{ scale: scale4, top: top4 }}
-        className="sticky flex h-[400px] w-full items-center rounded-[25px] bg-[#acd0e7] md:h-[500px]"
+        className="sticky flex h-[500px] w-full items-center rounded-[25px] bg-[#acd0e7] md:h-[500px]"
       >
         <div className="flex justify-between">
           <div className="content flex flex-col gap-4 px-10 md:w-1/2">
