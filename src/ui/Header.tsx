@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { SiFacebook, SiGithub, SiLinkedin } from "react-icons/si";
 
@@ -9,7 +10,16 @@ function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const navLinks = ["Home", "About", "Projects", "Contact"];
+  const navLinks = [
+    { label: "Home", path: "/" },
+    { label: "About", path: "/about" },
+    { label: "Projects", path: "/projects" },
+    { label: "Contact", path: "/contact" },
+  ];
+
+  const linkStyle =
+    "cursor-pointer text-gray-700 hover:text-blue-600 transition-all";
+  const activeStyle = "font-bold text-blue-600 underline underline-offset-4";
 
   return (
     <div className="h-[60px]">
@@ -26,19 +36,25 @@ function Header() {
 
           {/* Desktop Menu */}
           <ul className="hidden space-x-8 md:flex">
-            {navLinks.map((link, index) => (
+            {navLinks.map(({ label, path }, index) => (
               <motion.li
-                key={link}
+                key={label}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{
                   opacity: 1,
                   y: 0,
                   transition: { delay: index * 0.1, duration: 0.4 },
                 }}
-                whileHover={{ scale: 1.1, color: "#3b82f6" }}
-                className="cursor-pointer text-gray-700 hover:text-blue-600"
+                whileHover={{ scale: 1.1 }}
               >
-                <a href={`#${link.toLowerCase()}`}>{link}</a>
+                <NavLink
+                  to={path}
+                  className={({ isActive }) =>
+                    `${linkStyle} ${isActive ? activeStyle : ""}`
+                  }
+                >
+                  {label}
+                </NavLink>
               </motion.li>
             ))}
           </ul>
@@ -85,30 +101,33 @@ function Header() {
             className="bg-gray-50 shadow-lg md:hidden"
           >
             <ul className="flex h-[100vh] flex-col items-center space-y-4 py-4">
-              {navLinks.map((link, index) => (
+              {navLinks.map(({ label, path }, index) => (
                 <motion.li
-                  key={link}
+                  key={label}
                   initial={{ opacity: 0, y: -10 }}
                   animate={{
                     opacity: 1,
                     y: 0,
                     transition: { delay: index * 0.1, duration: 0.4 },
                   }}
-                  whileHover={{ scale: 1.1, color: "#3b82f6" }}
-                  className="cursor-pointer text-gray-700 hover:text-blue-600"
+                  whileHover={{ scale: 1.1 }}
                 >
-                  <a
-                    href={`#${link.toLowerCase()}`}
+                  <NavLink
+                    to={path}
+                    className={({ isActive }) =>
+                      `${linkStyle} ${isActive ? activeStyle : ""}`
+                    }
                     onClick={() => setIsMenuOpen(false)} // Close menu when a link is clicked
                   >
-                    {link}
-                  </a>
+                    {label}
+                  </NavLink>
                 </motion.li>
               ))}
             </ul>
           </motion.div>
         )}
       </nav>
+
       <ul className="fixed bottom-2 right-4 z-[999] flex flex-col justify-end gap-4">
         <li>
           <a href="https://www.facebook.com/odayterk" target="_blank">
