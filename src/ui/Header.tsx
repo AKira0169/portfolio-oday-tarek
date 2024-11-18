@@ -20,7 +20,7 @@ function Header() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
             className="h-24 w-auto"
-            src="./src/assets/logo_for_Oday_Tarek__1_-removebg-preview.png"
+            src="./logo_for_Oday_Tarek__1_-removebg-preview.png"
             alt="Logo"
           />
 
