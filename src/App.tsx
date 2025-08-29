@@ -1,25 +1,18 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AppLayout from "./ui/AppLayout";
-import PageNotFound from "./ui/PageNotFound";
-import About from "./components/About";
-import AllPages from "./ui/AllPages";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Layout from "./components/layout/Layout";
 
-function App() {
+const App = () => {
   return (
-    <BrowserRouter basename="/portfolio-oday-tarek/">
+    <Router>
       <Routes>
-        <Route element={<AppLayout />}>
-          <Route path="/" element={<AllPages />} />
-          <Route path="About" element={<About />} />
-          <Route path="Projects" element={<Projects />} />
-          <Route path="Contact" element={<Contact />} />
-          <Route path="*" element={<PageNotFound />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
-}
+};
 
 export default App;
