@@ -22,7 +22,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="me-2 mt-5 w-[100%] max-w-[300px] rounded-3xl bg-black px-10 py-2.5 text-center text-sm font-medium text-white hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-800"
+          className="me-2 mt-5 w-full max-w-[300px] rounded-3xl bg-black px-10 py-2.5 text-center text-sm font-medium text-white hover:bg-linear-to-br focus:outline-hidden focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-800"
         >
           View Project
         </a>

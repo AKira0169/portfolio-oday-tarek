@@ -3,9 +3,9 @@ import Header from "./Header";
 import { Outlet } from "react-router-dom";
 function AppLayout() {
   return (
-    <div className="grid min-h-screen grid-rows-[auto,1fr,auto] gap-32">
+    <div>
       <Header />
-      <main className="flex flex-col items-center gap-56">
+      <main className="container flex flex-col justify-center">
         <Outlet />
       </main>
       <Footer />

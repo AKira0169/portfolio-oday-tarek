@@ -24,8 +24,8 @@ function Header() {
 
   return (
     <div className="h-[60px]">
-      <nav className="fixed left-0 top-0 z-50 h-[60px] w-full bg-gray-50 shadow-md">
-        <div className="mx-auto flex h-full max-w-screen-xl items-center justify-between px-4">
+      <nav className="fixed top-0 left-0 z-50 h-[60px] w-full bg-gray-50 shadow-md">
+        <div className="mx-auto flex h-full max-w-(--breakpoint-xl) items-center justify-between px-4">
           {/* Logo */}
           <motion.img
             initial={{ opacity: 0, x: -50 }}
@@ -63,7 +63,7 @@ function Header() {
           {/* Mobile Hamburger Menu */}
           <button
             onClick={toggleMenu}
-            className="block rounded p-2 focus:outline-none md:hidden"
+            className="block rounded-sm p-2 focus:outline-hidden md:hidden"
           >
             <span className="sr-only">Toggle Menu</span>
             <svg
@@ -101,7 +101,7 @@ function Header() {
             exit={{ opacity: 0, height: 0 }}
             className="bg-gray-50 shadow-lg md:hidden"
           >
-            <ul className="flex h-[100vh] flex-col items-center space-y-4 py-4">
+            <ul className="flex h-screen flex-col items-center space-y-4 py-4">
               {navLinks.map(({ label, path }, index) => (
                 <motion.li
                   key={label}
@@ -129,7 +129,7 @@ function Header() {
         )}
       </nav>
 
-      <ul className="fixed bottom-2 right-4 z-[999] flex flex-col justify-end gap-4">
+      <ul className="fixed right-4 bottom-2 z-999 flex flex-col justify-end gap-4">
         <li>
           <a href="https://www.facebook.com/odayterk" target="_blank">
             <SiFacebook className="text-2xl text-blue-600" />

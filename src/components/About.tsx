@@ -15,7 +15,7 @@ function About() {
       <h1 className="mb-10 text-3xl font-bold">About Me</h1>
       <div className="flex flex-col items-center justify-between gap-4 lg:w-[1200px] lg:flex-row">
         <div className="flex w-full flex-col items-start justify-center gap-10 px-10 md:w-1/2 md:px-0">
-          <h3 className="bg-gradient-to-r from-green-500 to-green-700 bg-clip-text text-2xl font-bold text-transparent md:text-4xl">
+          <h3 className="bg-linear-to-r from-green-500 to-green-700 bg-clip-text text-2xl font-bold text-transparent md:text-4xl">
             Who I am
           </h3>
           <p className="text-base font-semibold md:text-2xl">

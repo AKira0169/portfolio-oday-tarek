@@ -56,13 +56,15 @@ const projects: Project[] = [
 
 function Projects() {
   return (
-    <ScrollStack>
-      {projects.map((project, index) => (
-        <ScrollStackItem key={index}>
-          <ProjectCard project={project} />
-        </ScrollStackItem>
-      ))}
-    </ScrollStack>
+    <div className="flex w-full flex-col justify-center">
+      <ScrollStack>
+        {projects.map((project, index) => (
+          <ScrollStackItem key={index}>
+            <ProjectCard project={project} />
+          </ScrollStackItem>
+        ))}
+      </ScrollStack>
+    </div>
   );
 }
 

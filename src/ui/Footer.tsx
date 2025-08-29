@@ -1,9 +1,9 @@
 function Footer() {
   return (
-    <footer className="m-4 rounded-lg bg-white shadow dark:bg-gray-50">
-      <div className="mx-auto w-full max-w-screen-xl p-4 md:py-8">
+    <footer className="m-4 rounded-lg bg-white shadow-sm dark:bg-gray-50">
+      <div className="mx-auto w-full max-w-(--breakpoint-xl) p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="dark:text-dark self-center whitespace-nowrap text-2xl font-semibold">
+          <span className="dark:text-dark self-center text-2xl font-semibold whitespace-nowrap">
             Oday
           </span>
           <ul className="mb-6 flex flex-wrap items-center text-sm font-medium text-gray-400 sm:mb-0 dark:text-gray-400">
