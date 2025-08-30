@@ -1,16 +1,16 @@
 const WorkCard = ({ title, year, tags, description, image }) => {
   return (
-    <div className="mb-8 flex gap-8 border-b border-[#E0E0E0] pb-8">
-      <img src={image} alt={title} className="h-44 w-60 rounded-md" />
+    <div className="mb-8 flex flex-col md:flex-row gap-4 md:gap-8 border-b border-[#E0E0E0] pb-8">
+      <img src={image} alt={title} className="w-full md:w-60 h-auto md:h-44 rounded-md object-cover" />
       <div>
-        <h3 className="text-3xl font-bold text-[#21243D]">{title}</h3>
-        <div className="mt-4 flex items-center">
-          <span className="rounded-full bg-[#142850] px-4 py-1 text-lg font-black text-white">
+        <h3 className="text-2xl md:text-3xl font-bold text-[#21243D]">{title}</h3>
+        <div className="mt-2 md:mt-4 flex flex-wrap items-center">
+          <span className="rounded-full bg-[#142850] px-3 md:px-4 py-1 text-sm md:text-lg font-black text-white">
             {year}
           </span>
-          <span className="ml-6 text-xl text-[#8695A4]">{tags}</span>
+          <span className="ml-4 md:ml-6 text-lg md:text-xl text-[#8695A4]">{tags}</span>
         </div>
-        <p className="mt-4 text-base text-[#21243D]">{description}</p>
+        <p className="mt-2 md:mt-4 text-sm md:text-base text-[#21243D]">{description}</p>
       </div>
     </div>
   );
