@@ -1,7 +1,5 @@
 import Magnet from "../blocks/Animations/Magnet/Magnet";
 import Threads from "../blocks/Backgrounds/Threads/Threads";
-import ShinyText from "../blocks/TextAnimations/ShinyText/ShinyText";
-import { Button } from "./ui/button";
 import profile from "/profile.png";
 
 const Hero = () => {
