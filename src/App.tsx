@@ -6,7 +6,7 @@ import Layout from "./components/layout/Layout";
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/portfolio-oday-tarek/">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
