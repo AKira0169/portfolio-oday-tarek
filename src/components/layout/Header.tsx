@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import {
   FaEnvelope,
   FaHome,
@@ -10,9 +11,29 @@ import {
 } from "react-icons/fa";
 import type { DockItemData } from "../../blocks/Components/Dock/Dock";
 import Dock from "../../blocks/Components/Dock/Dock";
+import VerticalDock from "../../blocks/Components/Dock/VerticalDock";
+import type { VerticalDockItemData } from "../../blocks/Components/Dock/VerticalDock";
+
 
 const Header = () => {
   const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(false);
+  const [dockPosition, setDockPosition] = useState<"left" | "right">("left");
+
+  // Check if the screen is mobile size
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+      setDockPosition(window.innerWidth <= 768 ? "right" : "left");
+    };
+    
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
 
   const items: DockItemData[] = [
     // Internal navigation
@@ -65,14 +86,26 @@ const Header = () => {
   ];
 
   return (
-    <div className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2">
-      <Dock
-        items={items}
-        panelHeight={68}
-        baseItemSize={50}
-        magnification={70}
-      />
-    </div>
+    <>
+      {/* Regular Dock for desktop/tablet */}
+      <div className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2 md:flex hidden">
+        <Dock
+          items={items}
+          panelHeight={68}
+          baseItemSize={50}
+          magnification={70}
+        />
+      </div>
+      
+      {/* Vertical Dock for mobile */}
+      <div className="md:hidden block">
+        <VerticalDock
+          items={items as VerticalDockItemData[]}
+          baseItemSize={32}
+          position={dockPosition}
+        />
+      </div>
+    </>
   );
 };
 
