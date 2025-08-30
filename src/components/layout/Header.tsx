@@ -41,12 +41,6 @@ const Header = () => {
       className: "bg-white",
     },
     {
-      icon: <FaBriefcase />,
-      label: "Works",
-      onClick: () => navigate("/works"),
-      className: "bg-white",
-    },
-    {
       icon: <FaEnvelope />,
       label: "Contact",
       onClick: () => navigate("/contact"),
