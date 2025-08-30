@@ -149,19 +149,35 @@ export default function VerticalDock({
     <>
       {/* Burger menu toggle button - positioned near the dock */}
       <motion.div
-        className={`fixed top-[28%] z-50 m-0 flex h-10 cursor-pointer items-end justify-end rounded-tl-md rounded-bl-md bg-white p-0 text-black shadow-lg ${isExpanded ? "right-[-20px] w-20" : "right-[-4px] w-12"}`}
         onClick={toggleMenu}
+        className="fixed top-12 right-0 z-50 flex cursor-pointer items-center justify-center rounded-tl-xl rounded-bl-xl bg-white shadow-lg"
         animate={{
-          scale: 0.5, // shrink when closed
-          x: isExpanded ? 0 : 15, // push into the right when closed
+          width: isExpanded ? 44 : 25, // smaller width
+          height: 30, // smaller height
         }}
-        transition={{ type: "tween", stiffness: 300, damping: 20 }}
+        transition={{ type: "spring", stiffness: 250, damping: 20 }}
       >
-        {isExpanded ? (
-          <FaTimes className="h-full w-full" />
-        ) : (
-          <FaBars className="h-full w-full" />
-        )}
+        {/* Hamburger / X icon */}
+        <div className="relative flex h-4 w-4 flex-col items-center justify-center">
+          {/* Top line */}
+          <motion.span
+            className="absolute h-0.5 w-4 rounded bg-black"
+            animate={{
+              rotate: isExpanded ? 45 : 0,
+              y: isExpanded ? 0 : -3,
+            }}
+            transition={{ duration: 0.3 }}
+          />
+          {/* Bottom line */}
+          <motion.span
+            className="absolute h-0.5 w-4 rounded bg-black"
+            animate={{
+              rotate: isExpanded ? -45 : 0,
+              y: isExpanded ? 0 : 3,
+            }}
+            transition={{ duration: 0.3 }}
+          />
+        </div>
       </motion.div>
 
       {/* Vertical dock - hidden by default, shown when expanded */}
@@ -172,7 +188,7 @@ export default function VerticalDock({
             animate={{ opacity: 1, [position]: 0 }}
             exit={{ opacity: 0, [position]: -50 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className={`${className} fixed top-1/2 z-40 flex -translate-y-1/2 flex-col gap-2 rounded-tl-md rounded-bl-md border bg-white px-1 py-2 shadow-lg`}
+            className={`${className} fixed top-56 z-40 flex -translate-y-1/2 flex-col gap-2 rounded-tl-md rounded-bl-md border bg-white px-1 py-2 shadow-lg`}
             style={{
               ...positionStyles,
               height: "auto",
