@@ -35,14 +35,21 @@ const FeaturedWorks = () => {
           year="2018"
           tags="Illustration"
           description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
-          image="/vite.svg"
+          image="/yallapass.png"
         />
         <WorkCard
           title="36 Days of Malayalam type"
           year="2018"
           tags="Typography"
           description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
-          image="/vite.svg"
+          image="/northcoast.png"
+        />
+        <WorkCard
+          title="36 Days of Malayalam type"
+          year="2018"
+          tags="Typography"
+          description="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+          image="/moneymanger.png"
         />
       </div>
     </section>

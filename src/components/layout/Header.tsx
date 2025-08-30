@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import MobileHeader from "./MobileHeader";
 
 const Header = () => {
@@ -6,15 +7,9 @@ const Header = () => {
       <div className="hidden md:block">
         <header className="flex items-center justify-end py-4">
           <nav className="space-x-8">
-            <a href="#" className="font-medium text-gray-800">
-              Works
-            </a>
-            <a href="#" className="font-medium text-gray-800">
-              Blog
-            </a>
-            <a href="#" className="font-medium text-gray-800">
-              Contact
-            </a>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/works">Works</NavLink>
+            <NavLink to="/contact">Contact</NavLink>
           </nav>
         </header>
       </div>
