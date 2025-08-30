@@ -15,7 +15,7 @@ export default function Skills() {
       alt: "Git",
     },
     {
-      src: "/logos/github_dark.svg",
+      src: "/logos/github_light.svg",
       alt: "GitHub",
     },
     {
