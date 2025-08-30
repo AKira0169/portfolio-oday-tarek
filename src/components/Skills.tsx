@@ -1,85 +1,105 @@
 import LogoLoop from "../blocks/Animations/LogoLoop/LogoLoop";
+import AWS from "/logos/aws_dark.svg";
+import Docker from "/logos/docker.svg";
+import Git from "/logos/git.svg";
+import GitHub from "/logos/github_light.svg";
+import GoogleCloud from "/logos/google-cloud.svg";
+import GraphQL from "/logos/graphql.svg";
+import Linear from "/logos/linear.svg";
+import MongoDB from "/logos/mongodb.svg";
+import Motion from "/logos/motion_dark.svg";
+import NestJS from "/logos/nestjs.svg";
+import NextJS from "/logos/nextjs_icon_dark.svg";
+import Ngrok from "/logos/ngrok-light.svg";
+import NodeJS from "/logos/nodejs.svg";
+import PostgreSQL from "/logos/postgresql.svg";
+import SocketIO from "/logos/socketio-light.svg";
+import Stripe from "/logos/stripe.svg";
+import TailwindCSS from "/logos/tailwindcss.svg";
+import TanStack from "/logos/tanstack.svg";
+import TypeScript from "/logos/typescript.svg";
+import Vite from "/logos/vitejs.svg";
 
 export default function Skills() {
   const imageLogos = [
     {
-      src: "/logos/aws_dark.svg",
+      src: AWS,
       alt: "AWS",
     },
     {
-      src: "/logos/docker.svg",
+      src: Docker,
       alt: "Docker",
     },
     {
-      src: "/logos/git.svg",
+      src: Git,
       alt: "Git",
     },
     {
-      src: "/logos/github_light.svg",
+      src: GitHub,
       alt: "GitHub",
     },
     {
-      src: "/logos/google-cloud.svg",
+      src: GoogleCloud,
       alt: "Google Cloud",
     },
     {
-      src: "/logos/graphql.svg",
+      src: GraphQL,
       alt: "GraphQL",
     },
     {
-      src: "/logos/linear.svg",
+      src: Linear,
       alt: "Linear",
     },
     {
-      src: "/logos/mongodb.svg",
+      src: MongoDB,
       alt: "MongoDB",
     },
     {
-      src: "/logos/motion_dark.svg",
+      src: Motion,
       alt: "Motion",
     },
     {
-      src: "/logos/nestjs.svg",
+      src: NestJS,
       alt: "NestJS",
     },
     {
-      src: "/logos/nextjs_icon_dark.svg",
+      src: NextJS,
       alt: "Next.js",
     },
     {
-      src: "/logos/ngrok-light.svg",
+      src: Ngrok,
       alt: "Ngrok",
     },
     {
-      src: "/logos/nodejs.svg",
+      src: NodeJS,
       alt: "Node.js",
     },
     {
-      src: "/logos/postgresql.svg",
+      src: PostgreSQL,
       alt: "PostgreSQL",
     },
     {
-      src: "/logos/socketio-light.svg",
+      src: SocketIO,
       alt: "Socket.IO",
     },
     {
-      src: "/logos/stripe.svg",
+      src: Stripe,
       alt: "Stripe",
     },
     {
-      src: "/logos/tailwindcss.svg",
+      src: TailwindCSS,
       alt: "Tailwind CSS",
     },
     {
-      src: "/logos/tanstack.svg",
+      src: TanStack,
       alt: "TanStack",
     },
     {
-      src: "/logos/typescript.svg",
+      src: TypeScript,
       alt: "TypeScript",
     },
     {
-      src: "/logos/vitejs.svg",
+      src: Vite,
       alt: "Vite",
     },
   ];

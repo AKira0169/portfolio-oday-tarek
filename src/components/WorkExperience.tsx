@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import { motion } from "motion/react";
+import Mantaray from "/mantaray.svg";
 
 type WorkExperienceItem = {
   company: string;
@@ -15,7 +16,7 @@ export default function WorkExperience() {
       company: "Mantaray Digital",
       role: "Full-Stack-Developer",
       period: "June 2024 - Present",
-      logo: "/mantaray.svg", // Placeholder logo - replace with actual company logo
+      logo: Mantaray, // Placeholder logo - replace with actual company logo
       website: "https://www.mantaray.digital/", // Replace with actual website
     },
   ];

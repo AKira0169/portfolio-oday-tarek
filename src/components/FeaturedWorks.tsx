@@ -1,3 +1,7 @@
+import SignatureStays from "/sig.png";
+import MoneyManager from "/moneymanger.png";
+import Yallapass from "/yallapass.png";
+
 const WorkCard = ({
   title,
   year,
@@ -83,7 +87,7 @@ const FeaturedWorks = () => {
           year="2025"
           tags="Full-Stack Developer"
           description="Signature Stays transforms private homes into five-star hospitality experiences. More than just property management, it's a luxury lifestyle service—backed by a smart digital dashboard that gives owners full control while delivering guests a seamless, indulgent stay."
-          image="/sig.png"
+          image={SignatureStays}
           demoLinks={[
             { label: "Website  Live", url: "https://signaturestays.io/" },
             {
@@ -116,7 +120,7 @@ const FeaturedWorks = () => {
           year="2025"
           tags="Full-Stack Developer"
           description="Engineered a credit/subscription system using Nest.js for modular architecture. Integrated RabbitMQ for real-time email notifications and billing workflows. Deployed on GCP with Kubernetes for auto-scaling during peak loads."
-          image="/yallapass.png"
+          image={Yallapass}
           demoLinks={[
             { label: "API Demo", url: "https://staging.api.yallapass.app/" },
             {
@@ -140,7 +144,7 @@ const FeaturedWorks = () => {
           year="2025"
           tags="Backend Developer"
           description="Created a personal finance tracking application that helps users manage expenses, set budgets, and visualize spending patterns through intuitive charts and reports."
-          image="/moneymanger.png"
+          image={MoneyManager}
           demoLinks={[
             {
               label: "API Demo",
