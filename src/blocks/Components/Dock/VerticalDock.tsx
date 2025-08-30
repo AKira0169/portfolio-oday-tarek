@@ -150,7 +150,7 @@ export default function VerticalDock({
       {/* Burger menu toggle button - positioned near the dock */}
       <motion.div
         onClick={toggleMenu}
-        className="fixed top-12 right-0 z-50 flex cursor-pointer items-center justify-center rounded-tl-xl rounded-bl-xl bg-white shadow-lg"
+        className="fixed top-9 right-0 z-50 flex cursor-pointer items-center justify-center rounded-tl-xl rounded-bl-xl bg-white shadow-lg"
         animate={{
           width: isExpanded ? 44 : 25, // smaller width
           height: 30, // smaller height
@@ -188,7 +188,7 @@ export default function VerticalDock({
             animate={{ opacity: 1, [position]: 0 }}
             exit={{ opacity: 0, [position]: -50 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className={`${className} fixed top-56 z-40 flex -translate-y-1/2 flex-col gap-2 rounded-tl-md rounded-bl-md border bg-white px-1 py-2 shadow-lg`}
+            className={`${className} fixed top-48 z-40 flex -translate-y-1/2 flex-col gap-2 rounded-tl-md rounded-bl-md border bg-white px-1 py-2 shadow-lg`}
             style={{
               ...positionStyles,
               height: "auto",
