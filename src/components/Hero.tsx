@@ -1,6 +1,7 @@
 import Magnet from "../blocks/Animations/Magnet/Magnet";
 import Threads from "../blocks/Backgrounds/Threads/Threads";
 import profile from "/profile.png";
+import cv from "/OdayTarek.pdf";
 
 const Hero = () => {
   return (
@@ -31,7 +32,7 @@ const Hero = () => {
           <div className="mt-8">
             <Magnet>
               <a
-                href="/OdayTarek.pdf"
+                href={cv}
                 download
                 className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-amber-600 hover:via-orange-600 hover:to-red-600 hover:shadow-xl"
               >
