@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { ExternalLink } from "lucide-react";
-import { FaPhone, FaVoicemail, FaWhatsapp } from "react-icons/fa";
+import { FaPhone, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 interface IFormInput {

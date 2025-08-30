@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import {
   FaEnvelope,
   FaHome,
-  FaBriefcase,
   FaFacebook,
   FaInstagram,
   FaGithub,

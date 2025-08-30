@@ -12,7 +12,6 @@ import {
   AnimatePresence,
 } from "motion/react";
 import React, { Children, cloneElement, useEffect, useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
 
 export type VerticalDockItemData = {
   icon: React.ReactNode;
