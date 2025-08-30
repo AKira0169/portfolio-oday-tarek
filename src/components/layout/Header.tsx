@@ -1,51 +1,78 @@
-import { NavLink, useLocation } from "react-router";
-import MobileHeader from "./MobileHeader";
+import { useNavigate } from "react-router-dom";
+import {
+  FaEnvelope,
+  FaHome,
+  FaBriefcase,
+  FaFacebook,
+  FaInstagram,
+  FaGithub,
+  FaLinkedin,
+} from "react-icons/fa";
+import type { DockItemData } from "../../blocks/Components/Dock/Dock";
+import Dock from "../../blocks/Components/Dock/Dock";
 
 const Header = () => {
-  const location = useLocation();
-  // Custom NavLink styling function to handle active state
-  const navLinkClasses = ({ isActive }: { isActive: boolean }) => {
-    return `relative px-4 py-2 font-medium text-base transition-all duration-300 ease-in-out group ${isActive ? "text-primary font-semibold" : "text-foreground/80 hover:text-primary"}`;
-  };
+  const navigate = useNavigate();
+
+  const items: DockItemData[] = [
+    // Internal navigation
+    {
+      icon: <FaHome />,
+      label: "Home",
+      onClick: () => navigate("/"),
+      className: "bg-white",
+    },
+    {
+      icon: <FaBriefcase />,
+      label: "Works",
+      onClick: () => navigate("/works"),
+      className: "bg-white",
+    },
+    {
+      icon: <FaEnvelope />,
+      label: "Contact",
+      onClick: () => navigate("/contact"),
+      className: "bg-white",
+    },
+
+    // Social links (open in new tab)
+    {
+      icon: <FaFacebook />,
+      label: "Facebook",
+      onClick: () => window.open("https://www.facebook.com/odayterk", "_blank"),
+      className: "bg-white",
+    },
+    {
+      icon: <FaInstagram />,
+      label: "Instagram",
+      onClick: () =>
+        window.open("https://www.instagram.com/akira0169/", "_blank"),
+      className: "bg-white",
+    },
+    {
+      icon: <FaGithub />,
+      label: "GitHub",
+      onClick: () => window.open("https://github.com/AKira0169", "_blank"),
+      className: "bg-white",
+    },
+    {
+      icon: <FaLinkedin />,
+      label: "LinkedIn",
+      onClick: () =>
+        window.open("https://www.linkedin.com/in/odaytarek/", "_blank"),
+      className: "bg-white",
+    },
+  ];
 
   return (
-    <>
-      <div className="hidden md:block">
-        <header className="bg-background/80 fixed top-0 right-0 left-0 z-[1002] flex w-full items-center justify-end px-8 py-6 shadow-sm backdrop-blur-md">
-          <nav className="flex items-center space-x-6">
-            <NavLink to="/" className={navLinkClasses}>
-              <span className="relative z-10">Home</span>
-              <span className="bg-primary absolute inset-x-0 -bottom-1 h-0.5 origin-left scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
-              <span
-                className="bg-primary absolute inset-x-0 -bottom-1 h-0.5 origin-left scale-x-0 transition-transform duration-300 ease-out data-[active]:scale-x-100"
-                data-active={location.pathname === "/" ? "true" : undefined}
-              ></span>
-            </NavLink>
-            <NavLink to="/works" className={navLinkClasses}>
-              <span className="relative z-10">Works</span>
-              <span className="bg-primary absolute inset-x-0 -bottom-1 h-0.5 origin-left scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
-              <span
-                className="bg-primary absolute inset-x-0 -bottom-1 h-0.5 origin-left scale-x-0 transition-transform duration-300 ease-out data-[active]:scale-x-100"
-                data-active={
-                  location.pathname === "/works" ? "true" : undefined
-                }
-              ></span>
-            </NavLink>
-            <NavLink to="/contact" className={navLinkClasses}>
-              <span className="relative z-10">Contact</span>
-              <span className="bg-primary absolute inset-x-0 -bottom-1 h-0.5 origin-left scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
-              <span
-                className="bg-primary absolute inset-x-0 -bottom-1 h-0.5 origin-left scale-x-0 transition-transform duration-300 ease-out data-[active]:scale-x-100"
-                data-active={
-                  location.pathname === "/contact" ? "true" : undefined
-                }
-              ></span>
-            </NavLink>
-          </nav>
-        </header>
-      </div>
-      <MobileHeader />
-    </>
+    <div className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2">
+      <Dock
+        items={items}
+        panelHeight={68}
+        baseItemSize={50}
+        magnification={70}
+      />
+    </div>
   );
 };
 
