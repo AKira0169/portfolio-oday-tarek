@@ -6,8 +6,8 @@ import React, {
   useState,
   useEffect,
   useRef,
-  ReactNode,
-  HTMLAttributes,
+  type HTMLAttributes,
+  type ReactNode,
 } from "react";
 
 interface MagnetProps extends HTMLAttributes<HTMLDivElement> {
