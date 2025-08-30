@@ -1,4 +1,7 @@
+import Magnet from "../blocks/Animations/Magnet/Magnet";
 import Threads from "../blocks/Backgrounds/Threads/Threads";
+import ShinyText from "../blocks/TextAnimations/ShinyText/ShinyText";
+import { Button } from "./ui/button";
 import profile from "/profile.png";
 
 const Hero = () => {
@@ -27,15 +30,16 @@ const Hero = () => {
             with microservices and cloud-native solutions to deliver
             high-performance, reliable products.
           </p>
-
           <div className="mt-8">
-            <a
-              href="/OdayTarek.pdf"
-              download
-              className="rounded-md bg-red-500 px-6 py-3 font-medium text-white"
-            >
-              Download Resume
-            </a>
+            <Magnet>
+              <a
+                href="/OdayTarek.pdf"
+                download
+                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-amber-600 hover:via-orange-600 hover:to-red-600 hover:shadow-xl"
+              >
+                Download Resume
+              </a>
+            </Magnet>
           </div>
         </div>
         <div className="flex-shrink-0">
