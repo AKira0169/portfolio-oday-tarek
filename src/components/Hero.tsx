@@ -8,7 +8,7 @@ const Hero = () => {
     <section className="relative py-12 md:py-24">
       <div className="inset-0 -z-10 hidden md:absolute md:block">
         <Threads
-          amplitude={10}
+          amplitude={5}
           color={[0.8, 0.6, 0.4]}
           distance={1}
           enableMouseInteraction={false}
