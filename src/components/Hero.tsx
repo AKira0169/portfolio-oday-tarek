@@ -23,11 +23,11 @@ const Hero = () => {
           </h1>
           <p className="mt-4 text-lg text-gray-600 md:text-xl">
             I’m a developer with over 3 years of hands-on experience building
-            scalable web applications. I specialize in the MERN stack and have
-            strong expertise in backend development with Node.js and NestJS, as
-            well as creating intuitive frontends with React. I enjoy working
-            with microservices and cloud-native solutions to deliver
-            high-performance, reliable products.
+            scalable web applications. I specialize in modern JavaScript
+            frameworks, with strong expertise in backend development using
+            Node.js and NestJS, and in creating intuitive frontend with React
+            and Vue.js. I enjoy designing microservices and cloud-native
+            architectures that deliver high-performance, reliable products.
           </p>
           <div className="mt-8">
             <Magnet>

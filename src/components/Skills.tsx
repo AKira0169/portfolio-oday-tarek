@@ -19,6 +19,8 @@ import TailwindCSS from "/logos/tailwindcss.svg";
 import TanStack from "/logos/tanstack.svg";
 import TypeScript from "/logos/typescript.svg";
 import Vite from "/logos/vitejs.svg";
+import Vue from "/logos/vue.svg";
+import Nuxt from "/logos/nuxt.svg";
 
 export default function Skills() {
   const imageLogos = [
@@ -29,6 +31,14 @@ export default function Skills() {
     {
       src: Docker,
       alt: "Docker",
+    },
+    {
+      src: Vue,
+      alt: "Vue",
+    },
+    {
+      src: Nuxt,
+      alt: "Nuxt",
     },
     {
       src: Git,
