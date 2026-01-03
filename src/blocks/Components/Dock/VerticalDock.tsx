@@ -89,11 +89,11 @@ function VerticalDockLabel({
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          initial={{ opacity: 0, x: 0 }}
-          animate={{ opacity: 1, x: 10 }}
-          exit={{ opacity: 0, x: 0 }}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
           transition={{ duration: 0.2 }}
-          className={`${className} absolute top-1/2 left-full z-50 ml-1 w-fit -translate-y-1/2 rounded-sm border border-neutral-700 bg-[#060010] px-1.5 py-0.5 text-xs whitespace-pre text-white shadow-md`}
+          className={`${className} absolute top-1/2 left-full z-50 ml-2 w-fit -translate-y-1/2 rounded-md border border-white/10 bg-black/80 px-2 py-1 text-xs whitespace-pre text-white shadow-md backdrop-blur-md`}
           role="tooltip"
         >
           {children}
@@ -119,25 +119,10 @@ function VerticalDockIcon({ children, className = "" }: VerticalDockIconProps) {
 export default function VerticalDock({
   items,
   className = "",
-  position = "left",
-  baseItemSize = 40,
+  baseItemSize = 44,
 }: VerticalDockProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const isHovered = useMotionValue(0);
-
-  // Position styles based on the position prop
-  const positionStyles =
-    position === "left"
-      ? {
-          left: 0,
-          borderTopRightRadius: "1rem",
-          borderBottomRightRadius: "1rem",
-        }
-      : {
-          right: 0,
-          borderTopLeftRadius: "1rem",
-          borderBottomLeftRadius: "1rem",
-        };
 
   // Toggle menu expansion
   const toggleMenu = () => {
@@ -146,85 +131,80 @@ export default function VerticalDock({
 
   return (
     <>
-      {/* Burger menu toggle button - positioned near the dock */}
+      {/* FAB Toggle Button - Top Left */}
       <motion.div
         onClick={toggleMenu}
-        className="fixed top-9 right-0 z-50 flex cursor-pointer items-center justify-center rounded-tl-xl rounded-bl-xl border border-white/10 bg-black/50 backdrop-blur-md shadow-lg"
-        animate={{
-          width: isExpanded ? 44 : 25, // smaller width
-          height: 30, // smaller height
-        }}
-        transition={{ type: "spring", stiffness: 250, damping: 20 }}
+        className={`fixed top-6 left-6 z-50 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full shadow-xl ${className}`}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
-        {/* Hamburger / X icon */}
-        <div className="relative flex h-4 w-4 flex-col items-center justify-center">
-          {/* Top line */}
+        <div className="relative flex h-6 w-6 flex-col items-center justify-center gap-1.5">
           <motion.span
-            className="absolute h-0.5 w-4 rounded bg-white"
+            className="h-0.5 w-6 rounded-full bg-current"
             animate={{
               rotate: isExpanded ? 45 : 0,
-              y: isExpanded ? 0 : -3,
+              y: isExpanded ? 8 : 0,
             }}
-            transition={{ duration: 0.3 }}
           />
-          {/* Bottom line */}
           <motion.span
-            className="absolute h-0.5 w-4 rounded bg-white"
+            className="h-0.5 w-6 rounded-full bg-current"
+            animate={{
+              opacity: isExpanded ? 0 : 1,
+            }}
+          />
+          <motion.span
+            className="h-0.5 w-6 rounded-full bg-current"
             animate={{
               rotate: isExpanded ? -45 : 0,
-              y: isExpanded ? 0 : 3,
+              y: isExpanded ? -8 : 0,
             }}
-            transition={{ duration: 0.3 }}
           />
         </div>
       </motion.div>
 
-      {/* Vertical dock - hidden by default, shown when expanded */}
+      {/* Vertical Dock Items - Top Left (below button) */}
       <AnimatePresence>
         {isExpanded && (
-          <motion.div
-            initial={{ opacity: 0, [position]: -50 }}
-            animate={{ opacity: 1, [position]: 0 }}
-            exit={{ opacity: 0, [position]: -50 }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className={`${className} fixed top-48 z-40 flex -translate-y-1/2 flex-col gap-2 rounded-tl-md rounded-bl-md px-1 py-2 shadow-lg`}
-            style={{
-              ...positionStyles,
-              height: "auto",
-              width: "auto",
-            }}
-            onMouseEnter={() => isHovered.set(1)}
-            onMouseLeave={() => isHovered.set(0)}
-            role="toolbar"
-            aria-label="Application dock"
-          >
+          <div className="fixed top-24 left-6 z-40 flex flex-col items-start gap-4">
             {items.map((item, index) => (
-              <VerticalDockItem
+              <motion.div
                 key={index}
-                onClick={() => {
-                  item.onClick();
-                  setIsExpanded(false); // Close menu after clicking an item
+                initial={{ opacity: 0, y: -20, scale: 0.8 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -20, scale: 0.8 }}
+                transition={{
+                  delay: index * 0.05,
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 25,
                 }}
-                className={`${item.className} background-transparent cursor-pointer border-0`}
-                isHovered={isHovered}
-                baseItemSize={baseItemSize}
               >
-                <VerticalDockIcon>{item.icon}</VerticalDockIcon>
-                <VerticalDockLabel>{item.label}</VerticalDockLabel>
-              </VerticalDockItem>
+                <VerticalDockItem
+                  onClick={() => {
+                    item.onClick();
+                    setIsExpanded(false);
+                  }}
+                  className={`${item.className} border-0`}
+                  isHovered={isHovered}
+                  baseItemSize={baseItemSize}
+                >
+                  <VerticalDockIcon>{item.icon}</VerticalDockIcon>
+                  <VerticalDockLabel>{item.label}</VerticalDockLabel>
+                </VerticalDockItem>
+              </motion.div>
             ))}
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
 
-      {/* Overlay for mobile when menu is expanded */}
+      {/* Overlay */}
       <AnimatePresence>
         {isExpanded && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-30 bg-black/20"
+            className="fixed inset-0 z-30 bg-black/20 backdrop-blur-[2px]"
             onClick={() => setIsExpanded(false)}
           />
         )}
