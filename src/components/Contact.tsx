@@ -176,15 +176,19 @@ function Contact() {
           help bring your ideas to life.
         </p>
         <Button
+          asChild
           variant="outline"
           size="lg"
           className="rounded-full font-semibold transition-all hover:scale-105"
-          onClick={() => {
-            document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-          }}
         >
-          Start a Project
-          <ExternalLink className="ml-2 h-4 w-4" />
+          <a
+            href="https://wa.me/201143776030"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Start a Project
+            <ExternalLink className="ml-2 h-4 w-4" />
+          </a>
         </Button>
       </motion.div>
     </motion.section>
