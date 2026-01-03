@@ -37,7 +37,7 @@ function Contact() {
     >
       {/* Heading */}
       <div
-        className="mx-auto max-w-3xl space-y-2 text-center"
+        className="mx-auto max-w-3xl space-y-2 text-center px-6"
       >
         <h2 className="font-heading text-4xl md:text-6xl font-bold text-foreground">Contact Me</h2>
         <p className="text-muted-foreground">
@@ -145,31 +145,33 @@ function Contact() {
       </div>
 
       {/* Collaboration Box */}
-      <div
-        className="mx-auto mt-12 max-w-4xl rounded-xl border border-border bg-card p-8 text-center shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-white/5"
-      >
-        <h3 className="mb-3 text-xl font-bold text-foreground">
-          Looking for Collaboration?
-        </h3>
-        <p className="mb-6 text-muted-foreground">
-          I'm always interested in exciting projects. Let's discuss how I can
-          help bring your ideas to life.
-        </p>
-        <Button
-          asChild
-          variant="outline"
-          size="lg"
-          className="rounded-full font-semibold transition-all hover:scale-105"
+      <div className="mt-12 px-6">
+        <div
+          className="mx-auto max-w-4xl rounded-xl border border-border bg-card p-8 text-center shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-white/5"
         >
-          <a
-            href="https://wa.me/201143776030"
-            target="_blank"
-            rel="noopener noreferrer"
+          <h3 className="mb-3 text-xl font-bold text-foreground">
+            Looking for Collaboration?
+          </h3>
+          <p className="mb-6 text-muted-foreground">
+            I'm always interested in exciting projects. Let's discuss how I can
+            help bring your ideas to life.
+          </p>
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="rounded-full font-semibold transition-all hover:scale-105"
           >
-            Start a Project
-            <ExternalLink className="ml-2 h-4 w-4" />
-          </a>
-        </Button>
+            <a
+              href="https://wa.me/201143776030"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Start a Project
+              <ExternalLink className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
+        </div>
       </div>
     </section>
   );
