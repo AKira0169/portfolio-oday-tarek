@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { ExternalLink } from "lucide-react";
 import { FaPhone, FaWhatsapp } from "react-icons/fa";
@@ -32,19 +31,12 @@ function Contact() {
   };
 
   return (
-    <motion.section
+    <section
       id="contact"
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
-      viewport={{ amount: 0.2, once: true }}
       className="py-12"
     >
       {/* Heading */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
+      <div
         className="mx-auto max-w-3xl space-y-2 text-center"
       >
         <h2 className="font-heading text-4xl md:text-6xl font-bold text-foreground">Contact Me</h2>
@@ -52,16 +44,12 @@ function Contact() {
           I'd love to hear from you! Let's discuss how we can work together on
           your next project.
         </p>
-      </motion.div>
+      </div>
 
       {/* Grid */}
       <div className="mx-auto mt-10 grid max-w-5xl gap-8 px-6 md:grid-cols-2">
         {/* Left Side */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: true }}
+        <div
           className="space-y-6"
         >
           <div className="space-y-2">
@@ -113,15 +101,11 @@ function Contact() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Right Side (Form) */}
-        <motion.form
+        <form
           onSubmit={handleSubmit(onSubmit)}
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          viewport={{ once: true }}
           className="space-y-4 rounded-2xl border border-border bg-card p-8 shadow-xl backdrop-blur-md dark:border-white/10 dark:bg-white/5"
         >
           <h3 className="text-2xl font-bold text-foreground">Send a Message</h3>
@@ -157,15 +141,11 @@ function Contact() {
           >
             Send Message
           </Button>
-        </motion.form>
+        </form>
       </div>
 
       {/* Collaboration Box */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        viewport={{ once: true }}
+      <div
         className="mx-auto mt-12 max-w-4xl rounded-xl border border-border bg-card p-8 text-center shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-white/5"
       >
         <h3 className="mb-3 text-xl font-bold text-foreground">
@@ -190,8 +170,8 @@ function Contact() {
             <ExternalLink className="ml-2 h-4 w-4" />
           </a>
         </Button>
-      </motion.div>
-    </motion.section>
+      </div>
+    </section>
   );
 }
 
