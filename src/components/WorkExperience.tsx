@@ -38,11 +38,11 @@ export default function WorkExperience() {
             className="group relative grid grid-cols-[auto_1fr_auto] items-center gap-4 rounded-xl border border-black/5 bg-black/5 p-4 shadow-lg backdrop-blur-sm transition-all hover:bg-black/10 hover:shadow-xl dark:border-white/10 dark:bg-white/5 dark:hover:border-white/20 dark:hover:bg-white/10 md:p-6"
           >
             {/* Company Logo */}
-            <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-black/5 bg-white p-2 dark:border-white/10 dark:bg-white/10">
+            <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-black/5 bg-white dark:border-white/10 dark:bg-white/10">
               <img
                 src={experience.logo}
                 alt={`${experience.company} logo`}
-                className="h-full w-full object-contain"
+                className="h-full w-full object-cover"
               />
             </div>
 

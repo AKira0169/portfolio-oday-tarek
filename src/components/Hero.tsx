@@ -1,9 +1,17 @@
 import Magnet from "../blocks/Animations/Magnet/Magnet";
 import ShinyText from "../blocks/TextAnimations/ShinyText/ShinyText";
+import Stack from "./Stack";
 import profile from "/profile.png";
 import cv from "/OdayTarek.pdf";
 
 const Hero = () => {
+  const images = [
+    <img src={profile} alt="Profile" className="h-full w-full object-cover" />,
+    <img src="/moneymanger.png" alt="Money Manager" className="h-full w-full object-cover" />,
+    <img src="/northcoast.png" alt="North Coast" className="h-full w-full object-cover" />,
+    <img src="/yallapass.png" alt="Yalla Pass" className="h-full w-full object-cover" />,
+  ];
+
   return (
     <section className="relative py-12 md:py-24">
       <div className="flex flex-col-reverse items-center gap-8 md:flex-row md:justify-between">
@@ -32,12 +40,13 @@ const Hero = () => {
             </Magnet>
           </div>
         </div>
-        <div className="flex-shrink-0 relative">
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 blur-2xl opacity-20 animate-pulse"></div>
-          <img
-            src={profile}
-            alt="Oday Tarek"
-            className="relative h-48 w-48 rounded-full object-cover border-2 border-white/10 shadow-2xl md:h-64 md:w-64"
+        <div className="relative h-60 w-60 md:h-80 md:w-80">
+          <Stack
+            cards={images}
+            randomRotation={true}
+            sensitivity={180}
+            sendToBackOnClick={false}
+            animationConfig={{ stiffness: 200, damping: 20 }}
           />
         </div>
       </div>
