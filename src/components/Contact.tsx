@@ -3,6 +3,7 @@ import { useForm, type SubmitHandler } from "react-hook-form";
 import { ExternalLink } from "lucide-react";
 import { FaPhone, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { Button } from "./ui/button";
 
 interface IFormInput {
   name: string;
@@ -72,7 +73,7 @@ function Contact() {
           </div>
 
           <div className="space-y-6">
-            <div className="flex items-center gap-4 rounded-xl border border-black/5 bg-black/5 p-4 backdrop-blur-sm transition-colors hover:bg-black/10 dark:border-white/5 dark:bg-white/5 dark:hover:bg-white/10">
+            <div className="flex items-center gap-4 rounded-xl border border-border bg-card p-4 backdrop-blur-sm transition-colors hover:bg-accent dark:border-white/5 dark:bg-white/5 dark:hover:bg-white/10">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20 text-primary">
                 <MdEmail className="text-xl" />
               </div>
@@ -87,7 +88,7 @@ function Contact() {
               </div>
             </div>
 
-            <div className="flex items-center gap-4 rounded-xl border border-black/5 bg-black/5 p-4 backdrop-blur-sm transition-colors hover:bg-black/10 dark:border-white/5 dark:bg-white/5 dark:hover:bg-white/10">
+            <div className="flex items-center gap-4 rounded-xl border border-border bg-card p-4 backdrop-blur-sm transition-colors hover:bg-accent dark:border-white/5 dark:bg-white/5 dark:hover:bg-white/10">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20 text-primary">
                 <FaPhone className="rotate-90" />
               </div>
@@ -121,40 +122,41 @@ function Contact() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
-          className="space-y-4 rounded-2xl border border-black/5 bg-black/5 p-8 shadow-xl backdrop-blur-md dark:border-white/10 dark:bg-white/5"
+          className="space-y-4 rounded-2xl border border-border bg-card p-8 shadow-xl backdrop-blur-md dark:border-white/10 dark:bg-white/5"
         >
           <h3 className="text-2xl font-bold text-foreground">Send a Message</h3>
           <div className="space-y-3">
             <input
               type="text"
               placeholder="Your Name"
-              className="w-full rounded-lg border border-black/10 bg-white/50 p-3 text-foreground placeholder:text-muted-foreground/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:border-white/10 dark:bg-black/20"
+              className="w-full rounded-lg border border-border bg-background p-3 text-foreground placeholder:text-muted-foreground/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
               {...register("name", { required: true })}
             />
             <input
               type="email"
               placeholder="Your Email"
-              className="w-full rounded-lg border border-black/10 bg-white/50 p-3 text-foreground placeholder:text-muted-foreground/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:border-white/10 dark:bg-black/20"
+              className="w-full rounded-lg border border-border bg-background p-3 text-foreground placeholder:text-muted-foreground/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
               {...register("email", { required: true })}
             />
             <input
               type="text"
               placeholder="Subject"
-              className="w-full rounded-lg border border-black/10 bg-white/50 p-3 text-foreground placeholder:text-muted-foreground/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:border-white/10 dark:bg-black/20"
+              className="w-full rounded-lg border border-border bg-background p-3 text-foreground placeholder:text-muted-foreground/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
               {...register("subject", { required: true })}
             />
             <textarea
               placeholder="Your Message"
-              className="h-32 w-full rounded-lg border border-black/10 bg-white/50 p-3 text-foreground placeholder:text-muted-foreground/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none dark:border-white/10 dark:bg-black/20"
+              className="h-32 w-full rounded-lg border border-border bg-background p-3 text-foreground placeholder:text-muted-foreground/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
               {...register("message", { required: true })}
             />
           </div>
-          <button
+          <Button
             type="submit"
-            className="w-full rounded-full bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 py-3 font-bold text-white shadow-lg transition-transform hover:scale-[1.02] active:scale-[0.98]"
+            size="lg"
+            className="w-full rounded-full font-bold"
           >
             Send Message
-          </button>
+          </Button>
         </motion.form>
       </div>
 
@@ -164,7 +166,7 @@ function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
         viewport={{ once: true }}
-        className="mx-auto mt-12 max-w-4xl rounded-xl border border-black/5 bg-black/5 p-8 text-center shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-white/5"
+        className="mx-auto mt-12 max-w-4xl rounded-xl border border-border bg-card p-8 text-center shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-white/5"
       >
         <h3 className="mb-3 text-xl font-bold text-foreground">
           Looking for Collaboration?
@@ -173,13 +175,17 @@ function Contact() {
           I'm always interested in exciting projects. Let's discuss how I can
           help bring your ideas to life.
         </p>
-        <a
-          href="#contact"
-          className="inline-flex items-center rounded-full border border-black/5 bg-black/5 px-8 py-3 font-semibold text-foreground hover:bg-black/10 transition-all hover:scale-105 dark:bg-white/10 dark:border-white/10 dark:hover:bg-white/20"
+        <Button
+          asChild
+          variant="outline"
+          size="lg"
+          className="rounded-full font-semibold transition-all hover:scale-105"
         >
-          Start a Project
-          <ExternalLink className="ml-2 h-4 w-4" />
-        </a>
+          <a href="#contact">
+            Start a Project
+            <ExternalLink className="ml-2 h-4 w-4" />
+          </a>
+        </Button>
       </motion.div>
     </motion.section>
   );

@@ -51,7 +51,7 @@ function VerticalDockItem({
       }}
       whileHover={{ scale: 1.1 }}
       onClick={onClick}
-      className={`relative flex items-center justify-center rounded-full border border-neutral-700 bg-[#060010] shadow-md ${className}`}
+      className={`relative flex items-center justify-center rounded-full border border-border bg-card/90 shadow-md ${className}`}
       tabIndex={0}
       role="button"
       aria-haspopup="true"
@@ -93,7 +93,7 @@ function VerticalDockLabel({
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -20 }}
           transition={{ duration: 0.2 }}
-          className={`${className} absolute top-1/2 left-full z-50 ml-2 w-fit -translate-y-1/2 rounded-md border border-white/10 bg-black/80 px-2 py-1 text-xs whitespace-pre text-white shadow-md backdrop-blur-md`}
+          className={`${className} absolute top-1/2 left-full z-50 ml-2 w-fit -translate-y-1/2 rounded-md border border-border bg-popover px-2 py-1 text-xs whitespace-pre text-popover-foreground shadow-md backdrop-blur-md`}
           role="tooltip"
         >
           {children}

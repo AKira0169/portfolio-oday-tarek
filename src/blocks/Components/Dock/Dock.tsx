@@ -91,7 +91,7 @@ function DockItem({
       onFocus={() => isHovered.set(1)}
       onBlur={() => isHovered.set(0)}
       onClick={onClick}
-      className={`relative inline-flex items-center justify-center rounded-full bg-[#060010] shadow-md ${className}`}
+      className={`relative inline-flex items-center justify-center rounded-full bg-card/90 border border-border shadow-md ${className}`}
       tabIndex={0}
       role="button"
       aria-haspopup="true"
@@ -130,7 +130,7 @@ function DockLabel({ children, className = "", ...rest }: DockLabelProps) {
           animate={{ opacity: 1, y: -10 }}
           exit={{ opacity: 0, y: 0 }}
           transition={{ duration: 0.2 }}
-          className={`${className} absolute -top-6 left-1/2 w-fit rounded-full bg-white px-2 py-0.5 text-xs whitespace-pre text-black`}
+          className={`${className} absolute -top-6 left-1/2 w-fit rounded-full bg-popover border border-border px-2 py-0.5 text-xs whitespace-pre text-popover-foreground shadow-sm`}
           role="tooltip"
           style={{ x: "-50%" }}
         >
@@ -197,7 +197,7 @@ export default function Dock({
           <DockItem
             key={index}
             onClick={item.onClick}
-            className={`${item.className} cursor-pointer hover:bg-white/40`}
+            className={`${item.className} cursor-pointer hover:bg-accent`}
             mouseX={mouseX}
             spring={spring}
             distance={distance}
