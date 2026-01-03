@@ -1,27 +1,23 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AppLayout from "./ui/AppLayout";
-import PageNotFound from "./ui/PageNotFound";
-import About from "./components/About";
-import AllPages from "./ui/AllPages";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Skills from "./components/Skills";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
+import Layout from "./components/layout/Layout";
+import Preloader from "./components/Preloader";
 
-function App() {
+const App = () => {
   return (
-    <BrowserRouter basename="/portfolio-oday-tarek/">
-      <Routes>
-        <Route element={<AppLayout />}>
-          <Route path="/" element={<AllPages />} />
-          <Route path="About" element={<About />} />
-          <Route path="Projects" element={<Projects />} />
-          <Route path="skills" element={<Skills />} />
-          <Route path="Contact" element={<Contact />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <>
+      <Preloader />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </Router>
+    </>
   );
-}
+};
 
 export default App;
