@@ -21,6 +21,7 @@ import Vite from "/logos/vitejs.svg";
 import Vue from "/logos/vue.svg";
 import Nuxt from "/logos/nuxt.svg";
 import React from "/logos/react.svg";
+import Kafka from "/logos/apache-kafka.svg";
 
 export default function Skills() {
   const skills = [
@@ -45,6 +46,7 @@ export default function Skills() {
         { name: "NestJS", logo: NestJS },
         { name: "GraphQL", logo: GraphQL },
         { name: "Socket.IO", logo: SocketIO },
+        { name: "Kafka", logo: Kafka },
       ],
     },
     {
