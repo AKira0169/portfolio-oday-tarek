@@ -9,6 +9,8 @@ import {
   FaLinkedin,
   FaSun,
   FaMoon,
+  FaUser,
+  FaCode,
 } from "react-icons/fa";
 import type { DockItemData } from "../../blocks/Components/Dock/Dock";
 import Dock from "../../blocks/Components/Dock/Dock";
@@ -39,18 +41,42 @@ const Header = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  };
+
   const items: DockItemData[] = [
     // Internal navigation
     {
       icon: <FaHome className="text-black dark:text-white" />,
       label: "Home",
-      onClick: () => navigate("/"),
+      onClick: () => scrollToSection("home"),
+      className: "bg-white/50 backdrop-blur-md border border-black/10 hover:bg-white/80 dark:bg-black/50 dark:border-white/10 dark:hover:bg-black/70",
+    },
+    {
+      icon: <FaUser className="text-black dark:text-white" />,
+      label: "About",
+      onClick: () => scrollToSection("about"),
+      className: "bg-white/50 backdrop-blur-md border border-black/10 hover:bg-white/80 dark:bg-black/50 dark:border-white/10 dark:hover:bg-black/70",
+    },
+    {
+      icon: <FaCode className="text-black dark:text-white" />,
+      label: "Projects",
+      onClick: () => scrollToSection("projects"),
       className: "bg-white/50 backdrop-blur-md border border-black/10 hover:bg-white/80 dark:bg-black/50 dark:border-white/10 dark:hover:bg-black/70",
     },
     {
       icon: <FaEnvelope className="text-black dark:text-white" />,
       label: "Contact",
-      onClick: () => navigate("/contact"),
+      onClick: () => scrollToSection("contact"),
       className: "bg-white/50 backdrop-blur-md border border-black/10 hover:bg-white/80 dark:bg-black/50 dark:border-white/10 dark:hover:bg-black/70",
     },
 
