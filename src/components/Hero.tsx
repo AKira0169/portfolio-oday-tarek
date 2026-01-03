@@ -1,26 +1,29 @@
 import Magnet from "../blocks/Animations/Magnet/Magnet";
 import ShinyText from "../blocks/TextAnimations/ShinyText/ShinyText";
 import Stack from "./Stack";
-import profile from "/profile.png";
+import profile from "/profile-images/profile.png";
+import profile2 from "/profile-images/profile-2.png";
 import cv from "/OdayTarek.pdf";
 
 const Hero = () => {
   const images = [
+    <img src={profile2} alt="Profile" className="h-full w-full object-cover" />,
     <img src={profile} alt="Profile" className="h-full w-full object-cover" />,
-    <img src="/moneymanger.png" alt="Money Manager" className="h-full w-full object-cover" />,
-    <img src="/northcoast.png" alt="North Coast" className="h-full w-full object-cover" />,
-    <img src="/yallapass.png" alt="Yalla Pass" className="h-full w-full object-cover" />,
   ];
 
   return (
     <section className="relative py-12 md:py-24">
       <div className="flex flex-col-reverse items-center gap-8 md:flex-row md:justify-between">
         <div className="basis-2/3 text-center md:basis-3/5 md:text-left">
-          <h1 className="text-4xl font-bold text-foreground md:text-6xl leading-tight">
+          <h1 className="text-foreground text-4xl leading-tight font-bold md:text-6xl">
             Hi, I’m Oday, <br />
-            <ShinyText text="Full Stack Developer" speed={3} className="text-primary" />
+            <ShinyText
+              text="Full Stack Developer"
+              speed={3}
+              className="text-primary"
+            />
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground md:text-xl leading-relaxed">
+          <p className="text-muted-foreground mt-6 text-lg leading-relaxed md:text-xl">
             I’m a developer with over 3 years of hands-on experience building
             scalable web applications. I specialize in modern JavaScript
             frameworks, with strong expertise in backend development using
