@@ -29,11 +29,11 @@ const Layout = () => {
       <div className="fixed inset-0 z-0">
         <Particles
           particleColors={[particleColor, "#aa99ff"]}
-          particleCount={200}
+          particleCount={50}
           particleSpread={10}
-          speed={0.1}
+          speed={0.05}
           particleBaseSize={100}
-          moveParticlesOnHover={true}
+          moveParticlesOnHover={false}
           alphaParticles={false}
           disableRotation={false}
         />

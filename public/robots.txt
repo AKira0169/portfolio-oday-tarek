@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://AKira0169.github.io/portfolio-oday-tarek/sitemap.xml

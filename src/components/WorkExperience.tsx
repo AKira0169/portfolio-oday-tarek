@@ -1,5 +1,4 @@
 import { ExternalLink } from "lucide-react";
-import { motion } from "motion/react";
 import Mantaray from "/mantaray.svg";
 
 type WorkExperienceItem = {
@@ -29,12 +28,8 @@ export default function WorkExperience() {
 
       <div className="grid gap-8">
         {experiences.map((experience, index) => (
-          <motion.div
+          <div
             key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            viewport={{ once: true }}
             className="group relative grid grid-cols-[auto_1fr_auto] items-center gap-4 rounded-xl border border-black/5 bg-black/5 p-4 shadow-lg backdrop-blur-sm transition-all hover:bg-black/10 hover:shadow-xl dark:border-white/10 dark:bg-white/5 dark:hover:border-white/20 dark:hover:bg-white/10 md:p-6"
           >
             {/* Company Logo */}
@@ -71,7 +66,7 @@ export default function WorkExperience() {
             <div className="text-right text-sm font-medium text-muted-foreground/80">
               {experience.period}
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>

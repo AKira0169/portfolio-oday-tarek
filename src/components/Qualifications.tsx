@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import {
   GraduationCap,
   Award,
@@ -95,12 +94,8 @@ export default function Qualifications() {
         </h3>
         <div className="grid gap-6 md:grid-cols-2">
           {achievements.map((item, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              viewport={{ once: true }}
               className="group relative rounded-xl border border-black/5 bg-black/5 p-6 backdrop-blur-sm transition-all hover:bg-black/10 hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-white/5 dark:hover:border-white/20 dark:hover:bg-white/10"
             >
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20">
@@ -112,7 +107,7 @@ export default function Qualifications() {
               <p className="text-muted-foreground leading-relaxed">
                 {item.description}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -125,12 +120,8 @@ export default function Qualifications() {
           </h3>
           <div className="space-y-4">
             {whatIDo.map((item, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
                 className="flex gap-4 rounded-xl border border-black/5 bg-black/5 p-5 backdrop-blur-sm transition-all hover:bg-black/10 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
               >
                 <div className="mt-1 text-primary">{item.icon}</div>
@@ -140,7 +131,7 @@ export default function Qualifications() {
                     {item.description}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -153,12 +144,8 @@ export default function Qualifications() {
               <GraduationCap className="text-primary" /> Education
             </h3>
             {education.map((edu, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
                 className="rounded-xl border border-black/5 bg-black/5 p-6 backdrop-blur-sm dark:border-white/10 dark:bg-white/5"
               >
                 <h4 className="text-xl font-bold text-foreground">
@@ -173,7 +160,7 @@ export default function Qualifications() {
                 <p className="mt-4 text-sm text-muted-foreground">
                   {edu.description}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
 
@@ -184,12 +171,8 @@ export default function Qualifications() {
             </h3>
             <div className="grid gap-4 sm:grid-cols-2">
               {languages.map((lang, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  viewport={{ once: true }}
                   className="flex items-center justify-between rounded-xl border border-black/5 bg-black/5 p-4 backdrop-blur-sm dark:border-white/10 dark:bg-white/5"
                 >
                   <span className="font-bold text-foreground">
@@ -198,7 +181,7 @@ export default function Qualifications() {
                   <span className="text-sm text-muted-foreground">
                     {lang.level}
                   </span>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

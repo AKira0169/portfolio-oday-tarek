@@ -24,12 +24,13 @@ const Hero = () => {
             />
           </h1>
           <p className="text-muted-foreground mt-6 text-lg leading-relaxed md:text-xl">
-            I’m a developer with over 3 years of hands-on experience building
-            scalable web applications. I specialize in modern JavaScript
-            frameworks, with strong expertise in backend development using
-            Node.js and NestJS, and in creating intuitive frontend with React
-            and Vue.js. I enjoy designing microservices and cloud-native
-            architectures that deliver high-performance, reliable products.
+            I’m a developer based in Egypt with over 3 years of hands-on
+            experience building scalable web applications. I specialize in
+            modern JavaScript frameworks, with strong expertise in backend
+            development using Node.js and NestJS, and in creating intuitive
+            frontend with React and Vue.js. I enjoy designing microservices and
+            cloud-native architectures that deliver high-performance, reliable
+            products.
           </p>
           <div className="mt-8 flex justify-center md:justify-start">
             <Magnet>
