@@ -23,7 +23,7 @@ export default function WorkExperience() {
 
   return (
     <section className="py-20">
-      <h2 className="mb-8 text-center text-2xl text-[#21243D] md:text-left">
+      <h2 className="mb-12 text-center text-4xl font-bold text-foreground md:text-left">
         Work Experience
       </h2>
 
@@ -35,10 +35,10 @@ export default function WorkExperience() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="group relative grid grid-cols-[auto_1fr_auto] items-center gap-4 rounded-lg border border-neutral-200 bg-white p-4 shadow-sm transition-all hover:shadow-md md:p-6"
+            className="group relative grid grid-cols-[auto_1fr_auto] items-center gap-4 rounded-xl border border-black/5 bg-black/5 p-4 shadow-lg backdrop-blur-sm transition-all hover:bg-black/10 hover:shadow-xl dark:border-white/10 dark:bg-white/5 dark:hover:border-white/20 dark:hover:bg-white/10 md:p-6"
           >
             {/* Company Logo */}
-            <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-neutral-200 bg-white p-2">
+            <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border border-black/5 bg-white p-2 dark:border-white/10 dark:bg-white/10">
               <img
                 src={experience.logo}
                 alt={`${experience.company} logo`}
@@ -49,7 +49,7 @@ export default function WorkExperience() {
             {/* Company Details */}
             <div className="flex flex-col">
               <div className="flex items-center gap-2">
-                <h3 className="text-lg font-medium text-[#21243D]">
+                <h3 className="text-xl font-bold text-foreground">
                   {experience.company}
                 </h3>
                 {experience.website && (
@@ -57,18 +57,18 @@ export default function WorkExperience() {
                     href={experience.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-blue-600 opacity-0 transition-opacity group-hover:opacity-100"
+                    className="inline-flex items-center text-muted-foreground opacity-0 transition-all group-hover:opacity-100 group-hover:text-primary"
                     aria-label={`Visit ${experience.company} website`}
                   >
-                    <ExternalLink size={16} />
+                    <ExternalLink size={18} />
                   </a>
                 )}
               </div>
-              <p className="text-neutral-600">{experience.role}</p>
+              <p className="text-muted-foreground">{experience.role}</p>
             </div>
 
             {/* Period */}
-            <div className="text-right text-sm text-neutral-500">
+            <div className="text-right text-sm font-medium text-muted-foreground/80">
               {experience.period}
             </div>
           </motion.div>

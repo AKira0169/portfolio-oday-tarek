@@ -20,56 +20,60 @@ const WorkCard = ({
   technologies?: string[];
 }) => {
   return (
-    <div className="mb-8 flex flex-col gap-4 border-b border-[#E0E0E0] pb-8 md:flex-row md:gap-8">
-      <img
-        src={image}
-        alt={title}
-        className="h-auto w-full rounded-md object-cover md:h-44 md:w-60"
-      />
-      <div>
-        <h3 className="text-2xl font-bold text-[#21243D] md:text-3xl">
-          {title}
-        </h3>
-        <div className="mt-2 flex flex-wrap items-center md:mt-4">
-          <span className="rounded-full bg-[#142850] px-3 py-1 text-sm font-black text-white md:px-4 md:text-lg">
-            {year}
-          </span>
-          <span className="ml-4 text-lg text-[#8695A4] md:ml-6 md:text-xl">
-            {tags}
-          </span>
+    <div className="group relative overflow-hidden rounded-2xl border border-black/5 bg-black/5 p-6 backdrop-blur-sm transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 dark:border-white/10 dark:bg-white/5 dark:hover:border-white/20 dark:hover:bg-white/10">
+      <div className="flex flex-col gap-6 md:flex-row md:gap-8">
+        <div className="shrink-0 overflow-hidden rounded-lg md:w-60">
+          <img
+            src={image}
+            alt={title}
+            className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110 md:h-44 md:w-60"
+          />
         </div>
-        <p className="mt-2 text-sm text-[#21243D] md:mt-4 md:text-base">
-          {description}
-        </p>
-
-        {demoLinks && demoLinks.length > 0 && (
-          <div className="mt-3">
-            {demoLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mr-4 inline-block text-sm font-medium text-blue-600 hover:underline md:text-base"
-              >
-                {link.label}
-              </a>
-            ))}
+        <div className="flex flex-col flex-1">
+          <h3 className="text-2xl font-bold text-foreground md:text-3xl">
+            {title}
+          </h3>
+          <div className="mt-3 flex flex-wrap items-center gap-4">
+            <span className="rounded-full bg-primary/20 px-3 py-1 text-sm font-bold text-primary border border-primary/20">
+              {year}
+            </span>
+            <span className="text-lg text-muted-foreground">
+              {tags}
+            </span>
           </div>
-        )}
+          <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+            {description}
+          </p>
 
-        {technologies && technologies.length > 0 && (
-          <div className="mt-2 flex flex-wrap gap-2">
-            {technologies.map((tech, index) => (
-              <span
-                key={index}
-                className="rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-800"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        )}
+          {technologies && technologies.length > 0 && (
+            <div className="mt-4 flex flex-wrap gap-2">
+              {technologies.map((tech, index) => (
+                <span
+                  key={index}
+                  className="rounded-full border border-black/5 bg-black/5 px-3 py-1 text-xs font-medium text-muted-foreground dark:border-white/10 dark:bg-white/5"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          )}
+
+          {demoLinks && demoLinks.length > 0 && (
+            <div className="mt-6 flex flex-wrap gap-3">
+              {demoLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-black/5 bg-black/5 px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-black/10 hover:text-primary dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/20"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -78,7 +82,7 @@ const WorkCard = ({
 const FeaturedWorks = () => {
   return (
     <section className="py-20">
-      <h2 className="mb-8 text-center text-2xl text-[#21243D] md:text-left">
+      <h2 className="mb-12 text-center text-4xl font-bold text-foreground md:text-left">
         Featured works
       </h2>
       <div className="grid grid-cols-1 gap-8">
@@ -89,9 +93,9 @@ const FeaturedWorks = () => {
           description="Signature Stays transforms private homes into five-star hospitality experiences. More than just property management, it's a luxury lifestyle service—backed by a smart digital dashboard that gives owners full control while delivering guests a seamless, indulgent stay."
           image={SignatureStays}
           demoLinks={[
-            { label: "Website  Live", url: "https://signaturestays.io/" },
+            { label: "Website Live", url: "https://signaturestays.io/" },
             {
-              label: "Website Demo ",
+              label: "Website Demo",
               url: "https://staging.signaturestays.io/",
             },
             {

@@ -1,27 +1,18 @@
 import Magnet from "../blocks/Animations/Magnet/Magnet";
-import Threads from "../blocks/Backgrounds/Threads/Threads";
+import ShinyText from "../blocks/TextAnimations/ShinyText/ShinyText";
 import profile from "/profile.png";
 import cv from "/OdayTarek.pdf";
 
 const Hero = () => {
   return (
     <section className="relative py-12 md:py-24">
-      <div className="inset-0 -z-10 hidden md:absolute md:block">
-        <Threads
-          amplitude={5}
-          color={[0.8, 0.6, 0.4]}
-          distance={1}
-          enableMouseInteraction={false}
-        />
-      </div>
-
       <div className="flex flex-col-reverse items-center gap-8 md:flex-row md:justify-between">
         <div className="basis-2/3 text-center md:basis-3/5 md:text-left">
-          <h1 className="text-4xl font-bold text-gray-800 md:text-5xl">
+          <h1 className="text-4xl font-bold text-foreground md:text-6xl leading-tight">
             Hi, I’m Oday, <br />
-            Full Stack Developer
+            <ShinyText text="Full Stack Developer" speed={3} className="text-primary" />
           </h1>
-          <p className="mt-4 text-lg text-gray-600 md:text-xl">
+          <p className="mt-6 text-lg text-muted-foreground md:text-xl leading-relaxed">
             I’m a developer with over 3 years of hands-on experience building
             scalable web applications. I specialize in modern JavaScript
             frameworks, with strong expertise in backend development using
@@ -29,23 +20,24 @@ const Hero = () => {
             and Vue.js. I enjoy designing microservices and cloud-native
             architectures that deliver high-performance, reliable products.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex justify-center md:justify-start">
             <Magnet>
               <a
                 href={cv}
                 download
-                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-amber-600 hover:via-orange-600 hover:to-red-600 hover:shadow-xl"
+                className="inline-flex items-center justify-center rounded-full bg-black px-8 py-4 text-lg font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 dark:bg-white dark:text-black dark:shadow-[0_0_20px_rgba(255,255,255,0.3)] dark:hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]"
               >
                 Download Resume
               </a>
             </Magnet>
           </div>
         </div>
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 relative">
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 blur-2xl opacity-20 animate-pulse"></div>
           <img
             src={profile}
             alt="Oday Tarek"
-            className="h-48 w-48 rounded-full object-cover md:h-64 md:w-64"
+            className="relative h-48 w-48 rounded-full object-cover border-2 border-white/10 shadow-2xl md:h-64 md:w-64"
           />
         </div>
       </div>

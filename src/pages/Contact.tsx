@@ -46,8 +46,8 @@ function Contact() {
         viewport={{ once: true }}
         className="mx-auto max-w-3xl space-y-2 text-center"
       >
-        <h2 className="font-heading text-4xl md:text-6xl">Contact Me</h2>
-        <p className="text-gray-600">
+        <h2 className="font-heading text-4xl md:text-6xl font-bold text-foreground">Contact Me</h2>
+        <p className="text-muted-foreground">
           I'd love to hear from you! Let's discuss how we can work together on
           your next project.
         </p>
@@ -61,41 +61,43 @@ function Contact() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
-          className="space-y-4"
+          className="space-y-6"
         >
-          <h3 className="text-2xl font-bold text-gray-800">Get in Touch</h3>
-          <p className="text-gray-600">
-            Reach out through any of these channels. I'm always open to new
-            projects, ideas, or collaborations.
-          </p>
+          <div className="space-y-2">
+            <h3 className="text-2xl font-bold text-foreground">Get in Touch</h3>
+            <p className="text-muted-foreground">
+              Reach out through any of these channels. I'm always open to new
+              projects, ideas, or collaborations.
+            </p>
+          </div>
 
-          <div className="space-y-4">
-            <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-amber-500 to-red-500">
-                <MdEmail className="text-xl text-white" />
+          <div className="space-y-6">
+            <div className="flex items-center gap-4 rounded-xl border border-black/5 bg-black/5 p-4 backdrop-blur-sm transition-colors hover:bg-black/10 dark:border-white/5 dark:bg-white/5 dark:hover:bg-white/10">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20 text-primary">
+                <MdEmail className="text-xl" />
               </div>
               <div>
-                <h4 className="font-semibold text-gray-800">Email</h4>
+                <h4 className="font-semibold text-foreground">Email</h4>
                 <a
                   href="mailto:odaytarek62@gmail.com"
-                  className="text-amber-600 hover:text-amber-700"
+                  className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   odaytarek62@gmail.com
                 </a>
               </div>
             </div>
 
-            <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-amber-500 to-red-500">
-                <FaPhone className="rotate-90 text-white" />
+            <div className="flex items-center gap-4 rounded-xl border border-black/5 bg-black/5 p-4 backdrop-blur-sm transition-colors hover:bg-black/10 dark:border-white/5 dark:bg-white/5 dark:hover:bg-white/10">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20 text-primary">
+                <FaPhone className="rotate-90" />
               </div>
               <div>
-                <h4 className="font-semibold text-gray-800">
+                <h4 className="font-semibold text-foreground">
                   Phone / WhatsApp
                 </h4>
                 <a
                   href="tel:+201143776030"
-                  className="block text-amber-600 hover:text-amber-700"
+                  className="block text-muted-foreground hover:text-primary transition-colors"
                 >
                   +20 114 377 6030
                 </a>
@@ -103,7 +105,7 @@ function Contact() {
                   href="https://wa.me/201143776030"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-amber-600 hover:text-amber-700"
+                  className="flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors"
                 >
                   <FaWhatsapp /> Chat on WhatsApp
                 </a>
@@ -119,37 +121,37 @@ function Contact() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
-          className="space-y-4 rounded-lg bg-white p-6 shadow-lg"
+          className="space-y-4 rounded-2xl border border-black/5 bg-black/5 p-8 shadow-xl backdrop-blur-md dark:border-white/10 dark:bg-white/5"
         >
-          <h3 className="text-2xl font-bold text-gray-800">Send a Message</h3>
+          <h3 className="text-2xl font-bold text-foreground">Send a Message</h3>
           <div className="space-y-3">
             <input
               type="text"
               placeholder="Your Name"
-              className="w-full rounded-lg border border-gray-300 p-3 focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+              className="w-full rounded-lg border border-black/10 bg-white/50 p-3 text-foreground placeholder:text-muted-foreground/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:border-white/10 dark:bg-black/20"
               {...register("name", { required: true })}
             />
             <input
               type="email"
               placeholder="Your Email"
-              className="w-full rounded-lg border border-gray-300 p-3 focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+              className="w-full rounded-lg border border-black/10 bg-white/50 p-3 text-foreground placeholder:text-muted-foreground/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:border-white/10 dark:bg-black/20"
               {...register("email", { required: true })}
             />
             <input
               type="text"
               placeholder="Subject"
-              className="w-full rounded-lg border border-gray-300 p-3 focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+              className="w-full rounded-lg border border-black/10 bg-white/50 p-3 text-foreground placeholder:text-muted-foreground/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:border-white/10 dark:bg-black/20"
               {...register("subject", { required: true })}
             />
             <textarea
               placeholder="Your Message"
-              className="h-32 w-full rounded-lg border border-gray-300 p-3 focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+              className="h-32 w-full rounded-lg border border-black/10 bg-white/50 p-3 text-foreground placeholder:text-muted-foreground/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none dark:border-white/10 dark:bg-black/20"
               {...register("message", { required: true })}
             />
           </div>
           <button
             type="submit"
-            className="w-full rounded-full bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 py-3 font-semibold text-white shadow-lg transition-transform hover:scale-105"
+            className="w-full rounded-full bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 py-3 font-bold text-white shadow-lg transition-transform hover:scale-[1.02] active:scale-[0.98]"
           >
             Send Message
           </button>
@@ -162,18 +164,18 @@ function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
         viewport={{ once: true }}
-        className="mx-auto mt-12 max-w-4xl rounded-lg bg-gradient-to-r from-amber-50 to-orange-50 p-6 text-center shadow-md"
+        className="mx-auto mt-12 max-w-4xl rounded-xl border border-black/5 bg-black/5 p-8 text-center shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-white/5"
       >
-        <h3 className="mb-3 text-xl font-bold text-gray-800">
+        <h3 className="mb-3 text-xl font-bold text-foreground">
           Looking for Collaboration?
         </h3>
-        <p className="mb-5 text-gray-600">
+        <p className="mb-6 text-muted-foreground">
           I'm always interested in exciting projects. Let's discuss how I can
           help bring your ideas to life.
         </p>
         <a
           href="#contact"
-          className="inline-flex items-center rounded-full bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 px-6 py-3 font-semibold text-white shadow-md transition-transform hover:scale-105"
+          className="inline-flex items-center rounded-full border border-black/5 bg-black/5 px-8 py-3 font-semibold text-foreground hover:bg-black/10 transition-all hover:scale-105 dark:bg-white/10 dark:border-white/10 dark:hover:bg-white/20"
         >
           Start a Project
           <ExternalLink className="ml-2 h-4 w-4" />
