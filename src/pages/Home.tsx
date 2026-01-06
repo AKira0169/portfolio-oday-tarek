@@ -4,6 +4,7 @@ import Skills from "../components/Skills";
 import WorkExperience from "../components/WorkExperience";
 import Qualifications from "../components/Qualifications";
 import Contact from "../components/Contact";
+import ScrollReveal from "../components/ScrollReveal";
 
 const Home = () => {
   return (
@@ -11,21 +12,31 @@ const Home = () => {
       <div id="home">
         <Hero />
       </div>
-      <div id="skills">
-        <Skills />
-      </div>
-      <div id="experience">
-        <WorkExperience />
-      </div>
-      <div id="about">
-        <Qualifications />
-      </div>
-      <div id="projects">
-        <FeaturedWorks />
-      </div>
-      <div id="contact">
-        <Contact />
-      </div>
+      <ScrollReveal>
+        <div id="skills">
+          <Skills />
+        </div>
+      </ScrollReveal>
+      <ScrollReveal delay={100}>
+        <div id="experience">
+          <WorkExperience />
+        </div>
+      </ScrollReveal>
+      <ScrollReveal delay={100}>
+        <div id="about">
+          <Qualifications />
+        </div>
+      </ScrollReveal>
+      <ScrollReveal delay={100}>
+        <div id="projects">
+          <FeaturedWorks />
+        </div>
+      </ScrollReveal>
+      <ScrollReveal>
+        <div id="contact">
+          <Contact />
+        </div>
+      </ScrollReveal>
     </>
   );
 };

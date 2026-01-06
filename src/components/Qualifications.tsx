@@ -1,44 +1,13 @@
 import {
   GraduationCap,
-  Award,
   Globe,
-  Zap,
-  Server,
   Cloud,
-  Users,
   Code,
   Database,
   Layout,
 } from "lucide-react";
 
 export default function Qualifications() {
-  const achievements = [
-    {
-      title: "Performance Optimization",
-      description:
-        "Reduced API latency by introducing Redis caching and advanced query optimization techniques.",
-      icon: <Zap size={24} />,
-    },
-    {
-      title: "Scalable Architectures",
-      description:
-        "Designed resilient microservices using RabbitMQ to handle asynchronous complex workflows at scale.",
-      icon: <Server size={24} />,
-    },
-    {
-      title: "Cloud Deployment",
-      description:
-        "Deployed and managed containerized applications on GCP with Kubernetes for auto-scaling and high availability.",
-      icon: <Cloud size={24} />,
-    },
-    {
-      title: "Team Standards",
-      description:
-        "Implemented Git Conventional Commits and CI/CD pipelines, improving collaboration and release management.",
-      icon: <Users size={24} />,
-    },
-  ];
-
   const whatIDo = [
     {
       title: "Backend Development",
@@ -84,33 +53,8 @@ export default function Qualifications() {
   return (
     <section className="py-20">
       <h2 className="mb-12 text-center text-4xl font-bold text-foreground md:text-left">
-        Professional Highlights
+        About Me
       </h2>
-
-      {/* Key Achievements */}
-      <div className="mb-16">
-        <h3 className="mb-8 flex items-center gap-2 text-2xl font-bold text-muted-foreground/80">
-          <Award className="text-primary" /> Key Achievements
-        </h3>
-        <div className="grid gap-6 md:grid-cols-2">
-          {achievements.map((item, index) => (
-            <div
-              key={index}
-              className="group relative rounded-xl border border-black/5 bg-black/5 p-6 backdrop-blur-sm transition-all hover:bg-black/10 hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-white/5 dark:hover:border-white/20 dark:hover:bg-white/10"
-            >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20">
-                {item.icon}
-              </div>
-              <h4 className="mb-2 text-xl font-bold text-foreground">
-                {item.title}
-              </h4>
-              <p className="text-muted-foreground leading-relaxed">
-                {item.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
 
       <div className="grid gap-12 lg:grid-cols-2">
         {/* What I Do */}
