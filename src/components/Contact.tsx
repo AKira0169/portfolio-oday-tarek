@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 const socialLinks = [
@@ -25,6 +25,18 @@ const socialLinks = [
     icon: <FaLinkedinIn className="h-5 w-5" />,
     href: "https://linkedin.com/in/oday-tarek",
     label: "oday-tarek",
+  },
+  {
+    name: "Facebook",
+    icon: <FaFacebook className="h-5 w-5" />,
+    href: "https://www.facebook.com/odayterk",
+    label: "odayterk",
+  },
+  {
+    name: "Instagram",
+    icon: <FaInstagram className="h-5 w-5" />,
+    href: "https://www.instagram.com/akira0169/",
+    label: "akira0169",
   },
 ];
 

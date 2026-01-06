@@ -3,10 +3,6 @@ import { useEffect, useState } from "react";
 import {
   FaEnvelope,
   FaHome,
-  FaFacebook,
-  FaInstagram,
-  FaGithub,
-  FaLinkedin,
   FaSun,
   FaMoon,
   FaUser,
@@ -85,34 +81,6 @@ const Header = () => {
       icon: theme === "dark" ? <FaSun className="text-white" /> : <FaMoon className="text-black" />,
       label: theme === "dark" ? "Light Mode" : "Dark Mode",
       onClick: toggleTheme,
-      className: "bg-white/50 backdrop-blur-md border border-black/10 hover:bg-white/80 dark:bg-black/50 dark:border-white/10 dark:hover:bg-black/70",
-    },
-
-    // Social links (open in new tab)
-    {
-      icon: <FaFacebook className="text-black dark:text-white" />,
-      label: "Facebook",
-      onClick: () => window.open("https://www.facebook.com/odayterk", "_blank"),
-      className: "bg-white/50 backdrop-blur-md border border-black/10 hover:bg-white/80 dark:bg-black/50 dark:border-white/10 dark:hover:bg-black/70",
-    },
-    {
-      icon: <FaInstagram className="text-black dark:text-white" />,
-      label: "Instagram",
-      onClick: () =>
-        window.open("https://www.instagram.com/akira0169/", "_blank"),
-      className: "bg-white/50 backdrop-blur-md border border-black/10 hover:bg-white/80 dark:bg-black/50 dark:border-white/10 dark:hover:bg-black/70",
-    },
-    {
-      icon: <FaGithub className="text-black dark:text-white" />,
-      label: "GitHub",
-      onClick: () => window.open("https://github.com/AKira0169", "_blank"),
-      className: "bg-white/50 backdrop-blur-md border border-black/10 hover:bg-white/80 dark:bg-black/50 dark:border-white/10 dark:hover:bg-black/70",
-    },
-    {
-      icon: <FaLinkedin className="text-black dark:text-white" />,
-      label: "LinkedIn",
-      onClick: () =>
-        window.open("https://www.linkedin.com/in/odaytarek/", "_blank"),
       className: "bg-white/50 backdrop-blur-md border border-black/10 hover:bg-white/80 dark:bg-black/50 dark:border-white/10 dark:hover:bg-black/70",
     },
   ];
