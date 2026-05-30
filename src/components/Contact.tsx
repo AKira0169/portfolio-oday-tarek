@@ -1,85 +1,81 @@
-import { FaGithub, FaLinkedinIn, FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import {
+  FaGithub,
+  FaLinkedinIn,
+  FaWhatsapp,
+  FaFacebook,
+  FaInstagram,
+} from "react-icons/fa";
+import { ArrowUpRight } from "lucide-react";
+import SectionHeading from "./ui/SectionHeading";
+
+const EMAIL = "odaytarek62@gmail.com";
 
 const socialLinks = [
   {
-    name: "Email",
-    icon: <MdEmail className="h-5 w-5" />,
-    href: "mailto:odaytarek62@gmail.com",
-    label: "odaytarek62@gmail.com",
-  },
-  {
     name: "WhatsApp",
-    icon: <FaWhatsapp className="h-5 w-5" />,
+    icon: <FaWhatsapp className="h-4 w-4" />,
     href: "https://wa.me/201143776030",
-    label: "Chat on WhatsApp",
   },
   {
     name: "GitHub",
-    icon: <FaGithub className="h-5 w-5" />,
+    icon: <FaGithub className="h-4 w-4" />,
     href: "https://github.com/AKira0169",
-    label: "AKira0169",
   },
   {
     name: "LinkedIn",
-    icon: <FaLinkedinIn className="h-5 w-5" />,
+    icon: <FaLinkedinIn className="h-4 w-4" />,
     href: "https://linkedin.com/in/oday-tarek",
-    label: "oday-tarek",
   },
   {
     name: "Facebook",
-    icon: <FaFacebook className="h-5 w-5" />,
+    icon: <FaFacebook className="h-4 w-4" />,
     href: "https://www.facebook.com/odayterk",
-    label: "odayterk",
   },
   {
     name: "Instagram",
-    icon: <FaInstagram className="h-5 w-5" />,
+    icon: <FaInstagram className="h-4 w-4" />,
     href: "https://www.instagram.com/akira0169/",
-    label: "akira0169",
   },
 ];
 
 function Contact() {
   return (
-    <footer id="contact" className="py-16 mt-12">
-      {/* Divider line */}
-      <div className="mb-12 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+    <footer className="border-t border-border py-20 md:py-28">
+      <SectionHeading eyebrow="05 — Get in touch" title="Let's connect" />
 
-      <div className="mx-auto max-w-4xl text-center">
-        {/* Heading */}
-        <h2 className="text-3xl font-bold text-foreground md:text-4xl">
-          Let's Connect
-        </h2>
-        <p className="mt-3 text-muted-foreground">
-          Open for opportunities and collaborations
-        </p>
+      <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground">
+        Open for opportunities and collaborations. The fastest way to reach me is
+        email.
+      </p>
 
-        {/* Social Links */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          {socialLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              target={link.href.startsWith("mailto") ? undefined : "_blank"}
-              rel={link.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
-              className="group flex items-center gap-3 rounded-full border border-black/5 bg-black/5 px-5 py-3 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-primary/30 hover:bg-primary/10 hover:shadow-lg dark:border-white/10 dark:bg-white/5 dark:hover:border-primary/30 dark:hover:bg-primary/10"
-            >
-              <span className="text-muted-foreground transition-colors group-hover:text-primary">
-                {link.icon}
-              </span>
-              <span className="text-sm font-medium text-foreground">
-                {link.name}
-              </span>
-            </a>
-          ))}
-        </div>
+      <a
+        href={`mailto:${EMAIL}`}
+        className="mt-6 inline-flex items-center gap-1.5 font-serif text-2xl font-semibold tracking-tight text-foreground transition-colors hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background md:text-3xl"
+      >
+        {EMAIL}
+        <ArrowUpRight className="h-5 w-5" />
+      </a>
 
-        {/* Copyright */}
-        <div className="mt-16 text-sm text-muted-foreground/60">
-          <p>© {new Date().getFullYear()} Oday Tarek. Crafted with passion.</p>
-        </div>
+      <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3">
+        {socialLinks.map((link) => (
+          <a
+            key={link.name}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            <span className="text-muted-foreground transition-colors group-hover:text-brand">
+              {link.icon}
+            </span>
+            {link.name}
+          </a>
+        ))}
       </div>
+
+      <p className="mt-16 text-sm text-muted-foreground/70">
+        © {new Date().getFullYear()} Oday Tarek
+      </p>
     </footer>
   );
 }

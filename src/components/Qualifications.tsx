@@ -1,133 +1,107 @@
-import {
-  GraduationCap,
-  Globe,
-  Cloud,
-  Code,
-  Database,
-  Layout,
-} from "lucide-react";
+import SectionHeading from "./ui/SectionHeading";
 
 export default function Qualifications() {
   const whatIDo = [
     {
       title: "Backend Development",
       description:
-        "Building high-performance, secure APIs using NestJS and Node.js. Expertise in microservices and event-driven architectures.",
-      icon: <Database size={20} />,
+        "High-performance, secure APIs with NestJS and Node.js — microservices and event-driven architectures.",
     },
     {
       title: "Frontend Engineering",
       description:
-        "Crafting responsive, intuitive interfaces with React, Vue.js, and Nuxt. Focus on performance and user experience.",
-      icon: <Layout size={20} />,
+        "Responsive, intuitive interfaces with React, Vue.js, and Nuxt, with a focus on performance and user experience.",
     },
     {
       title: "DevOps & Cloud",
       description:
-        "Automating deployment pipelines and managing cloud infrastructure on Google Cloud Platform, Docker, and Nginx.",
-      icon: <Cloud size={20} />,
+        "Automated deployment pipelines and cloud infrastructure on Google Cloud Platform, Docker, and Nginx.",
     },
   ];
 
-  const education = [
-    {
-      degree: "Bachelor’s in Computer Science",
-      school: "Ain Shams University",
-      year: "2020 - 2024",
-      description:
-        "Grade: Good. Specialized in Software Engineering and Computer Science fundamentals.",
-    },
-  ];
+  const education = {
+    degree: "Bachelor's in Computer Science",
+    school: "Ain Shams University",
+    year: "2020 — 2024",
+    description:
+      "Grade: Good. Specialized in Software Engineering and Computer Science fundamentals.",
+  };
 
   const languages = [
-    {
-      language: "Arabic",
-      level: "Native",
-    },
-    {
-      language: "English",
-      level: "Professional Proficiency",
-    },
+    { language: "Arabic", level: "Native" },
+    { language: "English", level: "Professional Proficiency" },
   ];
 
   return (
-    <section className="py-20">
-      <h2 className="mb-12 text-center text-4xl font-bold text-foreground md:text-left">
-        About Me
-      </h2>
+    <section className="border-t border-border py-20 md:py-28">
+      <SectionHeading eyebrow="03 — Background" title="About" />
 
-      <div className="grid gap-12 lg:grid-cols-2">
+      <p className="mt-8 max-w-prose text-lg leading-relaxed text-muted-foreground">
+        I'm a full-stack developer based in Egypt with over three years of
+        hands-on experience building scalable web applications. I enjoy designing
+        microservices and cloud-native architectures that deliver
+        high-performance, reliable products.
+      </p>
+
+      <div className="mt-14 grid gap-12 md:grid-cols-2 md:gap-16">
         {/* What I Do */}
         <div>
-          <h3 className="mb-8 flex items-center gap-2 text-2xl font-bold text-muted-foreground/80">
-            <Code className="text-primary" /> What I Do
+          <h3 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+            What I Do
           </h3>
-          <div className="space-y-4">
-            {whatIDo.map((item, index) => (
-              <div
-                key={index}
-                className="flex gap-4 rounded-xl border border-black/5 bg-black/5 p-5 backdrop-blur-sm transition-all hover:bg-black/10 dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
-              >
-                <div className="mt-1 text-primary">{item.icon}</div>
-                <div>
-                  <h4 className="font-bold text-foreground">{item.title}</h4>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    {item.description}
-                  </p>
-                </div>
+          <dl className="mt-4 divide-y divide-border border-t border-border">
+            {whatIDo.map((item) => (
+              <div key={item.title} className="py-5">
+                <dt className="font-medium text-foreground">{item.title}</dt>
+                <dd className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                  {item.description}
+                </dd>
               </div>
             ))}
-          </div>
+          </dl>
         </div>
 
         {/* Education & Languages */}
-        <div className="space-y-8">
-          {/* Education */}
+        <div className="space-y-12">
           <div>
-            <h3 className="mb-8 flex items-center gap-2 text-2xl font-bold text-muted-foreground/80">
-              <GraduationCap className="text-primary" /> Education
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+              Education
             </h3>
-            {education.map((edu, index) => (
-              <div
-                key={index}
-                className="rounded-xl border border-black/5 bg-black/5 p-6 backdrop-blur-sm dark:border-white/10 dark:bg-white/5"
-              >
-                <h4 className="text-xl font-bold text-foreground">
-                  {edu.degree}
+            <div className="mt-4 border-t border-border py-5">
+              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <h4 className="font-medium text-foreground">
+                  {education.degree}
                 </h4>
-                <p className="text-primary font-medium mt-1">{edu.school}</p>
-                <div className="mt-3 flex items-center justify-between">
-                  <span className="inline-block rounded-md bg-primary/10 px-2 py-0.5 text-sm text-primary border border-primary/20">
-                    {edu.year}
-                  </span>
-                </div>
-                <p className="mt-4 text-sm text-muted-foreground">
-                  {edu.description}
-                </p>
+                <span className="text-sm text-muted-foreground">
+                  {education.year}
+                </span>
               </div>
-            ))}
+              <p className="mt-1 text-sm font-medium text-brand">
+                {education.school}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {education.description}
+              </p>
+            </div>
           </div>
 
-          {/* Languages */}
           <div>
-            <h3 className="mb-6 flex items-center gap-2 text-2xl font-bold text-muted-foreground/80">
-              <Globe className="text-primary" /> Languages
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+              Languages
             </h3>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {languages.map((lang, index) => (
+            <dl className="mt-4 divide-y divide-border border-t border-border">
+              {languages.map((lang) => (
                 <div
-                  key={index}
-                  className="flex items-center justify-between rounded-xl border border-black/5 bg-black/5 p-4 backdrop-blur-sm dark:border-white/10 dark:bg-white/5"
+                  key={lang.language}
+                  className="flex items-center justify-between py-4"
                 >
-                  <span className="font-bold text-foreground">
+                  <dt className="font-medium text-foreground">
                     {lang.language}
-                  </span>
-                  <span className="text-sm text-muted-foreground">
-                    {lang.level}
-                  </span>
+                  </dt>
+                  <dd className="text-sm text-muted-foreground">{lang.level}</dd>
                 </div>
               ))}
-            </div>
+            </dl>
           </div>
         </div>
       </div>

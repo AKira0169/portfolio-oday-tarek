@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet-async";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/layout/Layout";
-import Preloader from "./components/Preloader";
 
 const SITE_URL = "https://AKira0169.github.io/portfolio-oday-tarek";
 
@@ -68,7 +67,6 @@ const App = () => {
           {JSON.stringify(structuredData)}
         </script>
       </Helmet>
-      <Preloader />
       <Router>
         <Routes>
           <Route path="/" element={<Layout />}>

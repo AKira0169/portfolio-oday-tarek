@@ -9,31 +9,31 @@ import ScrollReveal from "../components/ScrollReveal";
 const Home = () => {
   return (
     <>
-      <div id="home">
+      <div id="home" className="scroll-mt-24">
         <Hero />
       </div>
       <ScrollReveal>
-        <div id="skills">
+        <div id="skills" className="scroll-mt-24">
           <Skills />
         </div>
       </ScrollReveal>
       <ScrollReveal delay={100}>
-        <div id="experience">
+        <div id="experience" className="scroll-mt-24">
           <WorkExperience />
         </div>
       </ScrollReveal>
       <ScrollReveal delay={100}>
-        <div id="about">
+        <div id="about" className="scroll-mt-24">
           <Qualifications />
         </div>
       </ScrollReveal>
       <ScrollReveal delay={100}>
-        <div id="projects">
+        <div id="projects" className="scroll-mt-24">
           <FeaturedWorks />
         </div>
       </ScrollReveal>
       <ScrollReveal>
-        <div id="contact">
+        <div id="contact" className="scroll-mt-24">
           <Contact />
         </div>
       </ScrollReveal>

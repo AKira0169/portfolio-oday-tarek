@@ -1,170 +1,136 @@
+import { ArrowUpRight } from "lucide-react";
 import SignatureStays from "/sig.png";
 import MoneyManager from "/moneymanger.png";
 import Yallapass from "/yallapass.png";
+import SectionHeading from "./ui/SectionHeading";
 
-const WorkCard = ({
-  title,
-  year,
-  tags,
-  description,
-  image,
-  demoLinks,
-  technologies,
-}: {
+type Project = {
   title: string;
   year: string;
-  tags: string;
+  role: string;
   description: string;
   image: string;
   demoLinks?: { label: string; url: string }[];
   technologies?: string[];
-}) => {
+};
+
+const projects: Project[] = [
+  {
+    title: "Signature Stays",
+    year: "2025",
+    role: "Full-Stack Developer",
+    description:
+      "Transforms private homes into five-star hospitality experiences — a luxury lifestyle service backed by a smart digital dashboard that gives owners full control while delivering guests a seamless stay.",
+    image: SignatureStays,
+    demoLinks: [
+      { label: "Website", url: "https://signaturestays.io/" },
+      { label: "Staging", url: "https://staging.signaturestays.io/" },
+      { label: "Dashboard", url: "https://staging.dashboard.signaturestays.io/" },
+      { label: "API", url: "https://api.signaturestays.io/" },
+    ],
+    technologies: ["React", "Next.js", "Socket.io", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    title: "Yallapass",
+    year: "2025",
+    role: "Full-Stack Developer",
+    description:
+      "A studio-management platform with a credit/subscription system built on Nest.js. Integrated RabbitMQ for real-time email and billing workflows; deployed on GCP with Kubernetes for auto-scaling during peak loads.",
+    image: Yallapass,
+    demoLinks: [
+      { label: "API", url: "https://staging.api.yallapass.app/" },
+      { label: "Dashboard", url: "https://staging.dashboard.yallapass.app" },
+    ],
+    technologies: ["Next.js", "Nest.js", "Socket.io", "RabbitMQ", "GCP", "MongoDB", "Docker"],
+  },
+  {
+    title: "Money Manager",
+    year: "2025",
+    role: "Backend Developer",
+    description:
+      "A personal-finance tracker that helps users manage expenses, set budgets, and visualize spending patterns through intuitive charts and reports.",
+    image: MoneyManager,
+    demoLinks: [
+      { label: "API", url: "https://staging.money.manger.mantaray.digital/" },
+    ],
+    technologies: ["Nest.js", "Socket.io", "Postgres", "Docker", "TypeORM", "GCP", "RabbitMQ"],
+  },
+];
+
+const ProjectCard = ({
+  title,
+  year,
+  role,
+  description,
+  image,
+  demoLinks,
+  technologies,
+}: Project) => {
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-black/5 bg-black/5 p-6 backdrop-blur-sm transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 dark:border-white/10 dark:bg-white/5 dark:hover:border-white/20 dark:hover:bg-white/10">
-      <div className="flex flex-col gap-6 md:flex-row md:gap-8">
-        <div className="shrink-0 overflow-hidden rounded-lg md:w-60">
-          <img
-            src={image}
-            alt={title}
-            className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110 md:h-44 md:w-60"
-          />
-        </div>
-        <div className="flex flex-col flex-1">
-          <h3 className="text-2xl font-bold text-foreground md:text-3xl">
+    <article className="group flex flex-col overflow-hidden rounded-lg border border-border bg-card transition-all duration-200 hover:-translate-y-1">
+      <div className="aspect-16/10 overflow-hidden border-b border-border bg-secondary">
+        <img
+          src={image}
+          alt={`${title} preview`}
+          loading="lazy"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+        />
+      </div>
+
+      <div className="flex flex-1 flex-col p-5">
+        <div className="flex items-baseline justify-between gap-3">
+          <h3 className="font-serif text-xl font-semibold tracking-tight text-foreground">
             {title}
           </h3>
-          <div className="mt-3 flex flex-wrap items-center gap-4">
-            <span className="rounded-full bg-primary/20 px-3 py-1 text-sm font-bold text-primary border border-primary/20">
-              {year}
-            </span>
-            <span className="text-lg text-muted-foreground">
-              {tags}
-            </span>
-          </div>
-          <p className="mt-4 text-base text-muted-foreground leading-relaxed">
-            {description}
-          </p>
-
-          {technologies && technologies.length > 0 && (
-            <div className="mt-4 flex flex-wrap gap-2">
-              {technologies.map((tech, index) => (
-                <span
-                  key={index}
-                  className="rounded-full border border-black/5 bg-black/5 px-3 py-1 text-xs font-medium text-muted-foreground dark:border-white/10 dark:bg-white/5"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          )}
-
-          {demoLinks && demoLinks.length > 0 && (
-            <div className="mt-6 flex flex-wrap gap-3">
-              {demoLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full border border-black/5 bg-black/5 px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-black/10 hover:text-primary dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/20"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          )}
+          <span className="shrink-0 text-sm text-muted-foreground">{year}</span>
         </div>
+        <p className="mt-1 text-sm font-medium text-brand">{role}</p>
+        <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-muted-foreground">
+          {description}
+        </p>
+
+        {technologies && technologies.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-1.5">
+            {technologies.map((tech) => (
+              <span
+                key={tech}
+                className="rounded-full border border-border bg-secondary px-2.5 py-0.5 text-xs text-muted-foreground"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {demoLinks && demoLinks.length > 0 && (
+          <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 border-t border-border pt-4">
+            {demoLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-0.5 text-sm font-medium text-muted-foreground transition-colors hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                {link.label}
+                <ArrowUpRight size={14} />
+              </a>
+            ))}
+          </div>
+        )}
       </div>
-    </div>
+    </article>
   );
 };
 
 const FeaturedWorks = () => {
   return (
-    <section className="py-20">
-      <h2 className="mb-12 text-center text-4xl font-bold text-foreground md:text-left">
-        Featured works
-      </h2>
-      <div className="grid grid-cols-1 gap-8">
-        <WorkCard
-          title="Signature Stays"
-          year="2025"
-          tags="Full-Stack Developer"
-          description="Signature Stays transforms private homes into five-star hospitality experiences. More than just property management, it's a luxury lifestyle service—backed by a smart digital dashboard that gives owners full control while delivering guests a seamless, indulgent stay."
-          image={SignatureStays}
-          demoLinks={[
-            { label: "Website Live", url: "https://signaturestays.io/" },
-            {
-              label: "Website Demo",
-              url: "https://staging.signaturestays.io/",
-            },
-            {
-              label: "Dashboard Demo",
-              url: "https://staging.dashboard.signaturestays.io/",
-            },
-            {
-              label: "API Demo",
-              url: "https://staging.api.signaturestays.io/",
-            },
-            {
-              label: "API Live",
-              url: "https://api.signaturestays.io/",
-            },
-          ]}
-          technologies={[
-            "React",
-            "Next.js",
-            "Socket.io",
-            "TypeScript",
-            "Tailwind CSS",
-          ]}
-        />
-        <WorkCard
-          title="Yallapass – Studio Management Platform"
-          year="2025"
-          tags="Full-Stack Developer"
-          description="Engineered a credit/subscription system using Nest.js for modular architecture. Integrated RabbitMQ for real-time email notifications and billing workflows. Deployed on GCP with Kubernetes for auto-scaling during peak loads."
-          image={Yallapass}
-          demoLinks={[
-            { label: "API Demo", url: "https://staging.api.yallapass.app/" },
-            {
-              label: "Dashboard Demo",
-              url: "https://staging.dashboard.yallapass.app",
-            },
-          ]}
-          technologies={[
-            "Nextjs",
-            "Tailwind CSS",
-            "Nest.js",
-            "Socket.io",
-            "RabbitMQ",
-            "GCP",
-            "MongoDB",
-            "Docker",
-          ]}
-        />
-        <WorkCard
-          title="Money Manager"
-          year="2025"
-          tags="Backend Developer"
-          description="Created a personal finance tracking application that helps users manage expenses, set budgets, and visualize spending patterns through intuitive charts and reports."
-          image={MoneyManager}
-          demoLinks={[
-            {
-              label: "API Demo",
-              url: "https://staging.money.manger.mantaray.digital/",
-            },
-          ]}
-          technologies={[
-            "Nest.js",
-            "Socket.io",
-            "Postgres",
-            "Docker",
-            "TypeOrm",
-            "GCP",
-            "RabbitMQ",
-          ]}
-        />
+    <section className="border-t border-border py-20 md:py-28">
+      <SectionHeading eyebrow="04 — Selected projects" title="Work" />
+      <div className="mt-12 grid gap-6 sm:grid-cols-2">
+        {projects.map((project) => (
+          <ProjectCard key={project.title} {...project} />
+        ))}
       </div>
     </section>
   );
