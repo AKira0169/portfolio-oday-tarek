@@ -126,11 +126,17 @@
 
   html {
     scroll-behavior: smooth;
+    /* Scale up the base so body copy reads comfortably.
+       Every Tailwind text-* / spacing tier is rem-based, so this
+       enlarges the whole type scale proportionally (text-sm ≈ 15.75px,
+       text-base = 18px). Responsive: a touch smaller on phones. */
+    font-size: clamp(16.5px, 1rem + 0.35vw, 18px);
   }
 
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
