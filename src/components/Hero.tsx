@@ -5,7 +5,7 @@ import cv from "/OdayTarek.pdf";
 const stats = [
   { value: "3+", label: "Years experience" },
   { value: "10+", label: "Projects delivered" },
-  { value: "5+", label: "Core technologies" },
+  { value: "99.9%", label: "Uptime in production" },
 ];
 
 const socialLinks = [
@@ -37,12 +37,12 @@ const Hero = () => {
           Oday Tarek
         </h1>
         <p className="mt-6 max-w-prose text-xl font-medium leading-snug text-foreground md:text-2xl">
-          I build web products that ship fast and scale far.
+          I build web &amp; mobile products that ship fast and scale far.
         </p>
         <p className="mt-4 max-w-prose text-base leading-relaxed text-muted-foreground md:text-lg">
-          From intuitive React &amp; Vue interfaces to resilient Node.js services
-          and cloud-native infrastructure, I take ideas from first commit to
-          production — and keep them fast when real traffic hits.
+          From React Native apps and Next.js dashboards to resilient NestJS
+          microservices and cloud-native infrastructure on GCP, I take ideas from
+          first commit to production — and keep them fast when real traffic hits.
         </p>
 
         {/* CTAs */}

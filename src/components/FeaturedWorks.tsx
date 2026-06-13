@@ -36,13 +36,13 @@ const projects: Project[] = [
     year: "2025",
     role: "Full-Stack Developer",
     description:
-      "A studio-management platform with a credit/subscription system built on Nest.js. Integrated RabbitMQ for real-time email and billing workflows; deployed on GCP with Kubernetes for auto-scaling during peak loads.",
+      "A studio-management platform with a credit/subscription system built on NestJS. Integrated RabbitMQ for real-time email and billing workflows; deployed on GCP with Kubernetes for auto-scaling during peak loads.",
     image: Yallapass,
     demoLinks: [
       { label: "API", url: "https://staging.api.yallapass.app/" },
       { label: "Dashboard", url: "https://staging.dashboard.yallapass.app" },
     ],
-    technologies: ["Next.js", "Nest.js", "Socket.io", "RabbitMQ", "GCP", "MongoDB", "Docker"],
+    technologies: ["Next.js", "NestJS", "Socket.io", "RabbitMQ", "GCP", "MongoDB", "Docker"],
   },
   {
     title: "Money Manager",
@@ -54,7 +54,7 @@ const projects: Project[] = [
     demoLinks: [
       { label: "API", url: "https://staging.money.manger.mantaray.digital/" },
     ],
-    technologies: ["Nest.js", "Socket.io", "Postgres", "Docker", "TypeORM", "GCP", "RabbitMQ"],
+    technologies: ["NestJS", "Socket.io", "Postgres", "Docker", "TypeORM", "GCP", "RabbitMQ"],
   },
   {
     title: "Plato",

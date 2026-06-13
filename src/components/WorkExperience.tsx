@@ -2,10 +2,12 @@ import { ExternalLink } from "lucide-react";
 import SectionHeading from "./ui/SectionHeading";
 
 const highlights = [
-  "Built production-grade web applications with React, Next.js & NestJS",
-  "Designed scalable microservices with RabbitMQ & Kubernetes",
-  "Optimized API performance with Redis caching & query optimization",
-  "Established CI/CD pipelines & Git conventional-commit standards",
+  "Shipped end-to-end product ecosystems — React Native apps, Next.js dashboards & NestJS backends",
+  "Architected NestJS microservices with CQRS & RabbitMQ, processing 10K+ async events daily",
+  "Reduced API response times by 40% via Redis caching, query optimization & pagination",
+  "Cut code duplication 60% by designing a Turborepo monorepo with shared packages",
+  "Hit 99.9% uptime with auto-scaling & zero-downtime deploys on GCP + Kubernetes",
+  "Automated releases with Semantic Release & Conventional Commits",
 ];
 
 export default function WorkExperience() {

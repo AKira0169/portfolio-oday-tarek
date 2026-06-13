@@ -21,7 +21,11 @@ import Vite from "/logos/vitejs.svg";
 import Vue from "/logos/vue.svg";
 import Nuxt from "/logos/nuxt.svg";
 import React from "/logos/react.svg";
-import Kafka from "/logos/apache-kafka.svg";
+import RabbitMQ from "/logos/rabbitmq.svg";
+import Redis from "/logos/redis.svg";
+import Kubernetes from "/logos/kubernetes.svg";
+import Redux from "/logos/redux.svg";
+import Firebase from "/logos/firebase.svg";
 import SectionHeading from "./ui/SectionHeading";
 
 export default function Skills() {
@@ -41,13 +45,21 @@ export default function Skills() {
       ],
     },
     {
+      category: "Mobile",
+      items: [
+        { name: "React Native", logo: React },
+        { name: "Redux", logo: Redux },
+        { name: "Firebase", logo: Firebase },
+      ],
+    },
+    {
       category: "Backend",
       items: [
         { name: "Node.js", logo: NodeJS },
         { name: "NestJS", logo: NestJS },
         { name: "GraphQL", logo: GraphQL },
         { name: "Socket.IO", logo: SocketIO },
-        { name: "Kafka", logo: Kafka },
+        { name: "RabbitMQ", logo: RabbitMQ },
       ],
     },
     {
@@ -55,9 +67,11 @@ export default function Skills() {
       items: [
         { name: "PostgreSQL", logo: PostgreSQL },
         { name: "MongoDB", logo: MongoDB },
+        { name: "Redis", logo: Redis },
         { name: "Docker", logo: Docker },
-        { name: "AWS", logo: AWS },
+        { name: "Kubernetes", logo: Kubernetes },
         { name: "Google Cloud", logo: GoogleCloud },
+        { name: "AWS", logo: AWS },
       ],
     },
     {
