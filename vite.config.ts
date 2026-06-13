@@ -12,4 +12,7 @@ export default defineConfig({
     },
   },
   base: "/portfolio-oday-tarek/",
+  // .docx isn't in Vite's default asset list, so importing the CV from public/
+  // (to get the base-path-prefixed URL) needs it registered as an asset type.
+  assetsInclude: ["**/*.docx"],
 });
