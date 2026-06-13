@@ -2,6 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import SignatureStays from "/sig.png";
 import MoneyManager from "/moneymanger.png";
 import Yallapass from "/yallapass.png";
+import Plato from "/plato.png";
 import SectionHeading from "./ui/SectionHeading";
 
 type Project = {
@@ -54,6 +55,18 @@ const projects: Project[] = [
       { label: "API", url: "https://staging.money.manger.mantaray.digital/" },
     ],
     technologies: ["Nest.js", "Socket.io", "Postgres", "Docker", "TypeORM", "GCP", "RabbitMQ"],
+  },
+  {
+    title: "Plato",
+    year: "2026",
+    role: "Full-Stack Developer",
+    description:
+      "An all-in-one restaurant operations platform — POS, kitchen display, waiter floor, inventory & recipe costing, finance/accounting, loyalty, payroll, and multi-branch management, with AI menu-engineering insights and full Arabic (RTL) support.",
+    image: Plato,
+    demoLinks: [
+      { label: "Dashboard", url: "https://app.useplato.net/admin/signin" },
+    ],
+    technologies: ["Next.js", "Convex", "TypeScript", "Tailwind CSS", "Recharts"],
   },
 ];
 
