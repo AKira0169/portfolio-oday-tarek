@@ -1,6 +1,6 @@
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import profile from "/profile-images/profile-2.png";
-import cv from "/OdayTarek.pdf";
+import cv from "/OdayTarek.docx";
 
 const stats = [
   { value: "3+", label: "Years experience" },
