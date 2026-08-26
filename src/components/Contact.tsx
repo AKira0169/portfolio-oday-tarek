@@ -44,8 +44,7 @@ function Contact() {
       <SectionHeading eyebrow="05 — Get in touch" title="Let's connect" />
 
       <p className="mt-6 max-w-prose text-lg leading-relaxed text-muted-foreground">
-        Open for opportunities and collaborations. The fastest way to reach me is
-        email.
+        Open to interesting collaborations. The fastest way to reach me is email.
       </p>
 
       <a

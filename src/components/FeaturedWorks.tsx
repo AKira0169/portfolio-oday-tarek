@@ -88,12 +88,6 @@ const projects: Project[] = [
     description:
       "Transforms private homes into five-star hospitality experiences — a luxury lifestyle service backed by a smart digital dashboard that gives owners full control while delivering guests a seamless stay.",
     image: SignatureStays,
-    demoLinks: [
-      { label: "Website", url: "https://signaturestays.io/" },
-      { label: "Staging", url: "https://staging.signaturestays.io/" },
-      { label: "Dashboard", url: "https://staging.dashboard.signaturestays.io/" },
-      { label: "API", url: "https://api.signaturestays.io/" },
-    ],
     technologies: ["React", "Next.js", "Socket.io", "TypeScript", "Tailwind CSS"],
   },
   {
@@ -103,10 +97,6 @@ const projects: Project[] = [
     description:
       "A studio-management platform with a credit/subscription system built on NestJS. Integrated RabbitMQ for real-time email and billing workflows; deployed on GCP with Kubernetes for auto-scaling during peak loads.",
     image: Yallapass,
-    demoLinks: [
-      { label: "API", url: "https://staging.api.yallapass.app/" },
-      { label: "Dashboard", url: "https://staging.dashboard.yallapass.app" },
-    ],
     technologies: ["Next.js", "NestJS", "Socket.io", "RabbitMQ", "GCP", "MongoDB", "Docker"],
   },
   {
@@ -116,9 +106,6 @@ const projects: Project[] = [
     description:
       "A personal-finance tracker that helps users manage expenses, set budgets, and visualize spending patterns through intuitive charts and reports.",
     image: MoneyManager,
-    demoLinks: [
-      { label: "API", url: "https://staging.money.manger.mantaray.digital/" },
-    ],
     technologies: ["NestJS", "Socket.io", "Postgres", "Docker", "TypeORM", "GCP", "RabbitMQ"],
   },
   {
@@ -130,6 +117,7 @@ const projects: Project[] = [
     image: Plato,
     images: platoGallery,
     demoLinks: [
+      { label: "Website", url: "https://www.useplato.net/ar-EG" },
       { label: "Dashboard", url: "https://app.useplato.net/admin/signin" },
     ],
     technologies: ["Next.js", "Convex", "TypeScript", "Tailwind CSS", "Recharts"],
@@ -142,6 +130,7 @@ const projects: Project[] = [
       "A multi-branch clinic management platform for the Egyptian healthcare market — coded clinical records (ICD-10 / LOINC), canvas prescriptions rendered to branded PDFs, a specialty MS disease registry, booking & scheduling with online patient requests, inventory, EGP billing, and granular team roles, with full Arabic (RTL) support.",
     image: yallamedGallery[0].src,
     images: yallamedGallery,
+    demoLinks: [{ label: "Dashboard", url: "https://yallamed.uk" }],
     technologies: ["Vue", "Express", "MongoDB", "Socket.io", "Puppeteer", "AWS S3", "Tailwind CSS"],
   },
 ];

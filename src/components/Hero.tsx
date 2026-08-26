@@ -31,7 +31,16 @@ const Hero = () => {
       {/* Text */}
       <div className="w-full text-left md:basis-3/5">
         <p className="text-sm font-medium tracking-wide text-brand">
-          Full-Stack Developer · Egypt
+          Full-Stack Developer at{" "}
+          <a
+            href="https://circle360.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-brand/30 underline-offset-4 transition-colors hover:decoration-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            Circle360
+          </a>{" "}
+          · Egypt
         </p>
         <h1 className="mt-4 font-serif text-4xl font-semibold leading-[1.05] tracking-tight text-foreground md:text-6xl">
           Oday Tarek
